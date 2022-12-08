@@ -1,6 +1,6 @@
 import styles from "../../styles/Horario.module.css";
 
-
+import { AiOutlineClockCircle } from "react-icons/ai"
 import { useState } from "react"
 import Widget from "../Widget"
 
@@ -31,14 +31,18 @@ export default function Horario({noWidget}){
             }}
             height={120}
             width={120}
-            background={["rgb(141, 141, 181)", "coral"]}
+            background={["white", "white"]}
         >
 
             
 
             <ClosedContent isOpen={isOpen} >
                 <div className={styles.closedContent}>
-                    <p>Horario</p>
+                    <div className={styles.chheader}>
+                        <AiOutlineClockCircle className={styles.cclock}/>
+                        <p>  abierto, Manatí</p>
+                    </div>
+                    <p>Lunes: 9AM - 5PM</p>
                 </div>    
             </ClosedContent>
            
