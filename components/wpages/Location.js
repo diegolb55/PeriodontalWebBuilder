@@ -4,6 +4,8 @@ import Widget from "../Widget"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
+import {MdLocationOn} from "react-icons/md"
+import Image from "next/image"
 
 export default function Location({noWidget}){
 
@@ -25,7 +27,7 @@ export default function Location({noWidget}){
                 // border:"2px solid blue",
                 position:"absolute",
                 bottom: 0,
-                left: "10%",
+                left: 50,
             }}
             height={120}
             width={120}
@@ -36,7 +38,18 @@ export default function Location({noWidget}){
 
             <ClosedContent isOpen={isOpen} >
                 <div className={styles.closedContent}>
-                    <p>Location</p>
+                    {/* img */}
+                    <Image
+                        src="/images/horario.jpg"
+                        alt=""
+                        layout="fill"
+                        objectFit='cover'
+
+                    />
+                    <div className={styles.gradientbox}>
+                        <p>location</p>
+                        <MdLocationOn style={{fontSize: "2rem"}}/>
+                    </div>
                 </div>    
             </ClosedContent>
            

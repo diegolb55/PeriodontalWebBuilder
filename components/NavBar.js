@@ -2,16 +2,17 @@
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
-import Link from "next/link";
+import Link from "next/link"
 
 
-export default function NavBar(){
+
+export default function NavBar({ fill }) {
 
     const [open, setOpen] = useState(false);
 
-
     return (
-        <div  className="navbar">
+        <div  className="navbar" style={ fill ? {background: "#D9D9D9", boxShadow: "0px -2px 15px 0px rgba(114,196,145,0.75) inset"}
+         : {background: "transparent"}}>
 
             <Link href={"./"}>
                 <div className="logo">

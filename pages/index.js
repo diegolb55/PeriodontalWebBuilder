@@ -16,7 +16,7 @@ export default function Home() {
       <NavBar />
       
       <div style={{
-        border:"2px solid black",
+        // border:"2px solid black",
         height: "50vh",
         width: "100%",
         top: "115vh", position: "absolute",

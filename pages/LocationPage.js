@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 export default function LocationPage(){
     return (
         <>
-            <NavBar />
+            <NavBar fill={true}/>
             <Location noWidget={true} />
 
         </>

@@ -7,6 +7,7 @@ import Widget from "../Widget"
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
 import Image from "next/image"
+import { MdLocationOn } from "react-icons/md"
 
 export default function Horario({noWidget}){
 
@@ -81,6 +82,41 @@ export default function Horario({noWidget}){
                             <p className={styles.siderect}>
                                 abierto
                             </p>
+                            <div className={styles.days}>
+                                
+                                <div className={styles.scheduleRow}>
+                                    <p style={{fontSize:"1.5rem"}}>dia</p>
+                                    <p>domingo</p>
+                                    <p>lunes</p>
+                                    <p>martes</p>
+                                    <p>miercoles</p>
+                                    <p>jueves</p>
+                                    <p>viernes</p>
+                                    <p>sabado</p>
+                                    
+                                </div>
+                                <div className={styles.scheduleRow}>
+                                    <AiOutlineClockCircle style={{fontSize: "2rem"}}/>
+                                    <p>-</p>
+                                    <p>9am - 5pm</p>
+                                    <p>9am - 5pm</p>
+                                    <p>-</p>
+                                    <p>9am - 5pm</p>
+                                    <p>9am - 5pm</p>
+                                    <p>-</p>
+                                </div>
+                                <div className={styles.scheduleRow}>
+                                    <MdLocationOn style={{fontSize: "2rem"}}/>
+                                    <p>-</p>
+                                    <p>Ponce</p>
+                                    <p>Manati</p>
+                                    <p>-</p>
+                                    <p>Manati</p>
+                                    <p>Ponce</p>
+                                    <p>-</p>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>  
