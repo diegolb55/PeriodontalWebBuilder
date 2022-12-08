@@ -1,0 +1,25 @@
+
+
+
+
+.closedContent{
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px 2px;
+    position: relative;
+    
+}
+
+
+
+
+
+.openContent {
+    background: lightseagreen;
+    min-height: 120vh;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+
+
