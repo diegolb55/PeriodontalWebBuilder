@@ -6,7 +6,7 @@ import Widget from "../Widget"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
-
+import Image from "next/image"
 
 export default function Horario({noWidget}){
 
@@ -15,8 +15,25 @@ export default function Horario({noWidget}){
     if (noWidget) {
         return (
             <div className={styles.openContent}>
-                <p>This is the horario open</p>
-            </div>  
+                    <div className={styles.imgbox}>
+                        <Image
+                            src="/images/horario.jpg"
+                            alt=""
+                            layout="fill"
+                            objectFit='cover'
+
+                        />
+                    </div>
+                    <div className={styles.schedulebox}>
+                        <p>Horas de Oficina</p>
+                        <div className={styles.schedule}>
+                            <div className={styles.toprect}></div>
+                            <p className={styles.siderect}>
+                                abierto
+                            </p>
+                        </div>
+                    </div>
+                </div>  
         )
     }
     return (
@@ -49,9 +66,23 @@ export default function Horario({noWidget}){
             <OpenContent isOpen={isOpen} >
                 <div className={styles.openContent}>
                     <div className={styles.imgbox}>
+                        <Image
+                            src="/images/horario.jpg"
+                            alt=""
+                            layout="fill"
+                            objectFit='cover'
 
+                        />
                     </div>
-                    <div className={styles.schedule}></div>
+                    <div className={styles.schedulebox}>
+                        <p>Horas de Oficina</p>
+                        <div className={styles.schedule}>
+                            <div className={styles.toprect}></div>
+                            <p className={styles.siderect}>
+                                abierto
+                            </p>
+                        </div>
+                    </div>
                 </div>  
             </OpenContent>
               

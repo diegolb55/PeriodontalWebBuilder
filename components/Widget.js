@@ -43,7 +43,7 @@ export default function Widget(props){
             scale: fixed ? 1 : 25,
             position: fixed ? "fixed" : "relative",
             zIndex: 11,
-            overflowY: "scroll"
+            overflowY: "scroll",
            
         },
         
@@ -63,6 +63,7 @@ export default function Widget(props){
             zIndex : zIndex ? 11 : 10,
             overflowY: "visible",
 
+
         }
     }
 
@@ -79,8 +80,10 @@ export default function Widget(props){
             >
                 <motion.div className={`${styles.widget} ${ styles.absolute}`}
                     animate={{
-                        background: wopen ? background[0] : background[1],
+                        background: wopen ? background[1] : background[0],
                         borderRadius: fixed ? 0 : 15,
+                        boxShadow: wopen ? "none":"2px -2px 15px 2px rgba(114,196,145,0.75)",
+
                     }}
                     onClick={ () => setIsOpen( (b)=>!b) }   
                 >
