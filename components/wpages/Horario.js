@@ -38,7 +38,7 @@ export default function Horario({noWidget}){
 
             <ClosedContent isOpen={isOpen} >
                 <div className={styles.closedContent}>
-                    <div className={styles.chheader}>
+                    <div className={styles.cheader}>
                         <AiOutlineClockCircle className={styles.cclock}/>
                         <p>  abierto, Manatí</p>
                     </div>
@@ -48,7 +48,10 @@ export default function Horario({noWidget}){
            
             <OpenContent isOpen={isOpen} >
                 <div className={styles.openContent}>
-                    <p>This is the horario open</p>
+                    <div className={styles.imgbox}>
+
+                    </div>
+                    <div className={styles.schedule}></div>
                 </div>  
             </OpenContent>
               
