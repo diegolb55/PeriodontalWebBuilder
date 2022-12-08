@@ -13,7 +13,7 @@ export default function OpenContent(props){
                 setShow(1)
             }
             
-        }, 950)
+        }, 1200)
     }, [isOpen]);
 
     return (

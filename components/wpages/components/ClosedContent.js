@@ -26,7 +26,7 @@ export default function ClosedContent(props){
                     style={ style ? style : {
                         height: "100%", 
                         position:"relative",
-                        padding: 5,
+                        // padding: 5,
                     }}
                     initial={{opacity: 1}}
                     animate={{ opacity: 1}}

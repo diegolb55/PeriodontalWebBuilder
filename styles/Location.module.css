@@ -1,9 +1,29 @@
 .closedContent{
     background: lightblue;
     border-radius: 10px;
-    padding: 5px 2px;
+    /* padding: 5px 2px; */
     position: relative;
+
+    height: 100%;
+    overflow: hidden;
     
+    
+}
+.gradientbox{
+    background: rgb(48,80,137);
+    background: linear-gradient(180deg, rgba(48,80,137,0.7) 56%, rgba(217,217,217,0.06796221906731448) 100%);
+    position: relative;
+    height: 100%;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gradientbox > p {
+    position: absolute;
+    top: 10%;
 }
 
 

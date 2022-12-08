@@ -85,7 +85,7 @@ export default function Widget(props){
                         boxShadow: wopen ? "none":"2px -2px 15px 2px rgba(114,196,145,0.75)",
 
                     }}
-                    onClick={ () => setIsOpen( (b)=>!b) }   
+                    onClick={ () => setIsOpen( (b) => !b) }   
                 >
 
 
