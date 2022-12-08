@@ -42,7 +42,8 @@ export default function Widget(props){
             width: fixed ? "100vw":width,
             scale: fixed ? 1 : 25,
             position: fixed ? "fixed" : "relative",
-            zIndex : 11,
+            zIndex: 11,
+            overflowY: "scroll"
            
         },
         
@@ -60,6 +61,7 @@ export default function Widget(props){
             position: fixed ? "fixed" : "relative",
             scale:  fixed ? 25 : 1,
             zIndex : zIndex ? 11 : 10,
+            overflowY: "visible",
 
         }
     }

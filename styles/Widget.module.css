@@ -13,12 +13,16 @@
 
     height: 100%;
     width: 100%;
-    overflow-y: scroll;
 
    
     
    
 }
+
+.widgetCover::-webkit-scrollbar {
+    display: none;
+}
+
 
 .widget {
     background: green;
@@ -26,9 +30,6 @@
     width: 100%;
     box-shadow: 2px -2px 15px 2px rgba(114,196,145,0.75);
 
-
-
-    
 }
 
 
