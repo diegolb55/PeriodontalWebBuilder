@@ -18,8 +18,8 @@ export default function Horario({noWidget}){
     const obj = [
         {
             day: "domingo",
-            time: "-",
-            location: "-"
+            time: "--",
+            location: "--"
         },
         {
             day: "lunes",
@@ -33,8 +33,8 @@ export default function Horario({noWidget}){
         },
         {
             day: "miercoles",
-            time: "-",
-            location: "-"
+            time: "--",
+            location: "--"
         },
         {
             day: "jueves",
@@ -48,14 +48,15 @@ export default function Horario({noWidget}){
         },
         {
             day: "sabado",
-            time: "-",
-            location: "-"
+            time: "--",
+            location: "--"
         },
     ]
         
     let date = new Date();
     const schedule = new PeriodontalSchedule(obj, date);
-    console.log(schedule.isOpen())
+
+    console.log(schedule.currentSchedule())
 
     if (noWidget) {
         return (
@@ -124,9 +125,11 @@ export default function Horario({noWidget}){
                 <div className={styles.closedContent}>
                     <div className={styles.cheader}>
                         <AiOutlineClockCircle className={styles.cclock}/>
-                        <p>  abierto, Manatí</p>
+                        <p>{ schedule.isOpen() ? "abierto" : "cerrado"}, Manatí</p>
                     </div>
-                    <p>Lunes: 9AM - 5PM</p>
+                    {/* <p>Lunes: 9AM - 5PM</p> */}
+                    { schedule.getThreeRows() }
+                    <p>{schedule.currentSchedule()[0].day}: {schedule.currentSchedule()[0].time}</p>
                 </div>    
             </ClosedContent>
            
@@ -134,7 +137,7 @@ export default function Horario({noWidget}){
                 <div className={styles.openContent}>
                     <div className={styles.imgbox}>
                         <Image
-                            src="/images/horario.jpg"
+                            src={ schedule.isOpen() ? "/images/horario.jpg" :  "/images/horariodark.jpg"}
                             alt=""
                             layout="fill"
                             objectFit='cover'
@@ -143,8 +146,8 @@ export default function Horario({noWidget}){
                     </div>
                     <div className={styles.schedulebox}>
                         <p>Horas de Oficina</p>
-                        <div className={styles.schedule}>
-                            <div className={styles.toprect}></div>
+                        <div className={styles.schedule} style={ schedule.isOpen() ? {} : {background: "#9A9A9A"} }>
+                            <div style={ schedule.isOpen() ? {} : {background: "#9A9A9A"}} className={styles.toprect} ></div>
                             <p className={styles.siderect}>
                                 { schedule?.isOpen() ? "abierto" : "cerrado"}
                             </p>
