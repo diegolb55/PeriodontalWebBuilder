@@ -1,7 +1,7 @@
 import styles from "../../styles/Horario.module.css";
 
 import { AiOutlineClockCircle } from "react-icons/ai"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Widget from "../Widget"
 
 import ClosedContent from "./components/ClosedContent"
@@ -11,9 +11,8 @@ import { MdLocationOn } from "react-icons/md"
 
 import PeriodontalSchedule from "../../utilities/PeriodontalSchedule";
 
-export default function Horario({noWidget}){
+export default function Horario({noWidget, widgetControl, openWidget}){
 
-    const [isOpen, setIsOpen] = useState(false);
 
     let date = new Date();
     const schedule = new PeriodontalSchedule( date );
@@ -67,8 +66,10 @@ export default function Horario({noWidget}){
     }
     return (
         <Widget
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
+            isOpen={widgetControl?.current.horario}
+            setIsOpen={() => {
+                openWidget("horario")
+            }}
             wposition={{
                 position:"absolute",
                 top: 0,
@@ -82,7 +83,7 @@ export default function Horario({noWidget}){
 
             
 
-            <ClosedContent isOpen={isOpen} >
+            <ClosedContent isOpen={widgetControl?.current.horario} >
                 <div className={styles.closedContent}>
                     <div className={styles.cheader}>
                         <AiOutlineClockCircle className={styles.cclock}/>
@@ -92,7 +93,7 @@ export default function Horario({noWidget}){
                 </div>    
             </ClosedContent>
            
-            <OpenContent isOpen={isOpen} >
+            <OpenContent isOpen={widgetControl?.current.horario} >
                 <div className={styles.openContent}>
                     <div className={styles.imgbox}>
                         <Image

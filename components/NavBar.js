@@ -6,19 +6,36 @@ import Link from "next/link"
 
 
 
-export default function NavBar({ fill }) {
+export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl }) {
 
     const [open, setOpen] = useState(false);
 
     return (
-        <div  className="navbar" style={ fill ? {background: "#D9D9D9", boxShadow: "0px -2px 15px 0px rgba(114,196,145,0.75) inset"}
-         : {background: "transparent"}}>
+        <motion.div  className="navbar" 
+            animate={{
+                background: widgetControl?.current.location || fill ?
+                "#d9d9d9" : "#d9d9d900",
+                boxShadow: widgetControl?.current.location || fill ?
+                "0px -2px 15px 0px rgba(114,196,145,0.75) inset" : "none",
+                
+            }}
+            transition={{duration: 1.5}}
+            >
 
-            <Link href={"./"}>
-                <div className="logo">
+            {
+                isHome ? 
+                
+                    <div className="logo" onClick={()=> closeAllWidgets()}>
 
-                </div>
-            </Link>
+                    </div>
+
+                :
+                <Link href={"./"}>
+                    <div className="logo">
+
+                    </div>
+                </Link>
+            }
 
             {/* link box */}
             <motion.div className="links"
@@ -82,6 +99,6 @@ export default function NavBar({ fill }) {
            
 
 
-        </div>
+        </motion.div>
     )
 }
