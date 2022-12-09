@@ -45,6 +45,8 @@ export default function Widget(props){
             position: fixed ? "fixed" : "relative",
             zIndex: 11,
             overflowY: "scroll",
+            background: background[1]
+
            
         },
         
@@ -63,6 +65,7 @@ export default function Widget(props){
             scale:  fixed ? 25 : 1,
             zIndex : zIndex ? 11 : 10,
             overflowY: "visible",
+            background: "transparent",
 
 
         }
@@ -76,6 +79,7 @@ export default function Widget(props){
                 variants={cvariants}
                 animate={
                     wopen ? "open" : "closed"
+                    
                 }
                 transition={{duration: .5}}
             >
@@ -83,7 +87,7 @@ export default function Widget(props){
                     animate={{
                         background: wopen ? background[1] : background[0],
                         borderRadius: fixed ? 0 : 15,
-                        boxShadow: wopen ? "none":"2px -2px 15px 2px rgba(114,196,145,0.75)",
+                        boxShadow: wopen ? "none" : " 2px -2px 15px 2px rgba(114,196,145,0.75)",
 
                     }}
                     onClick={ () => setIsOpen( (b) => !b) }   

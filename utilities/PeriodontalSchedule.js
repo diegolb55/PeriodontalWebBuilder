@@ -2,8 +2,44 @@
 
 export default class PeriodontalSchedule {
 
-    constructor(obj, date){
-        this.schedule = obj;
+    constructor( date){
+        this.schedule = [
+            {
+                day: "domingo",
+                time: "--",
+                location: "--"
+            },
+            {
+                day: "lunes",
+                time: "9am - 5pm",
+                location: "Ponce",
+            },
+            {
+                day: "martes",
+                time: "9am - 5pm",
+                location: "Manati",
+            },
+            {
+                day: "miercoles",
+                time: "--",
+                location: "--"
+            },
+            {
+                day: "jueves",
+                time: "9am - 5pm",
+                location: "Manati",
+            },
+            {
+                day: "viernes",
+                time: "9am - 5pm",
+                location: "Manati",
+            },
+            {
+                day: "sabado",
+                time: "--",
+                location: "--"
+            },
+        ]
         this.date = date;
         
     }
@@ -23,33 +59,7 @@ export default class PeriodontalSchedule {
         return this.schedule.filter((s, index) => this.date.getDay() === index)
     }
 
-    getThreeRows(){
-        let day = this.date.getDay() 
-        return this.schedule.map((s, index) => {
-            if(day == 0){
-                return (
-                    <>
-                        <p>{s.day} : {s.time}</p>
-                        <p>{this.schedule[index+1]?.day} : {this.schedule[index+1]?.time}</p>
-                        <p>{this.schedule[index+2]?.day} : {this.schedule[index+2]?.time}</p>
-
-                    </>
-                    
-                )
-            }
-            if(day == 6){
-                return (
-                    <>
-                        <p>{s.day} : {s.time}</p>
-                        <p>{this.schedule[index+1]?.day} : {this.schedule[index+1]?.time}</p>
-                        <p>{this.schedule[index+2]?.day} : {this.schedule[index+2]?.time}</p>
-
-                    </>
-                    
-                )
-            }
-        })
-    }
+    
 
 
     get weekdays(){
