@@ -67,17 +67,41 @@ export default function Home() {
       />
       
       <div style={{
-        // border:"2px solid black",
-        height: "50vh",
-        width: "100%",
-        top: "115vh", position: "absolute",
-        maxWidth: 500,
+          // border: "2px solid black",
+          position: "absolute",
+          width: "100%",
+          top: "120vh",
+
+          display:"flex",
+          justifyContent:"space-around",
+          alignItems:"center",
+          flexWrap:"wrap",
+
       }}>
-        <Horario widgetControl={widgetControl} openWidget={openWidget}/>
-        <Location widgetControl={widgetControl} openWidget={openWidget}/>
-        <Services widgetControl={widgetControl} openWidget={openWidget}/>
+        <div style={{
+          // border: "2px solid blue",
+          height: "50vh",
+          width: "100%",
+          position: "relative",
+          maxWidth: 500,
+        }}>
+          <Horario widgetControl={widgetControl} openWidget={openWidget}/>
+          <Location widgetControl={widgetControl} openWidget={openWidget}/>
+          <Services widgetControl={widgetControl} openWidget={openWidget}/>
+        </div>
+
+        <div className={styles.videowrapper}>
+        <iframe 
+          // width="560" 
+          // height="315" 
+          src="https://www.youtube.com/embed/-hVy_jxeMeA" 
+          title="YouTube video player" 
+          frameborder="0" 
+          // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+
+        </div>
       </div>
-      
 
       
 

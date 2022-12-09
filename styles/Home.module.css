@@ -5,4 +5,23 @@
 
 }
 
+.videowrapper {
+  /* border: 2px solid red; */
+  position: relative;
+  
+  z-index: 10;
+  height: 300px;
+  width: 80%;
+  margin: 50px 0;
+  max-width: 500px;
+}
+.videowrapper iframe {
+  position: absolute;
+  border-radius: 25px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 
