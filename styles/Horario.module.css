@@ -56,7 +56,7 @@ OPEN WIDGET STYLING
     position:relative;
 }
 .schedulebox {
-    background: rgb(217,217,217);
+    background: #d9d9d9;
     background: linear-gradient(0deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 49%, rgba(217,217,217,1) 66%, rgba(217,217,217,1) 86%, rgba(217,217,217,0.06796221906731448) 100%);
     padding-top: 100px;
 

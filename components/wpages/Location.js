@@ -7,7 +7,7 @@ import OpenContent from "./components/OpenContent"
 import {MdLocationOn} from "react-icons/md"
 import Image from "next/image"
 
-export default function Location({noWidget}){
+export default function Location({noWidget, widgetControl, openWidget}){
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -23,8 +23,10 @@ export default function Location({noWidget}){
 
     return (
         <Widget
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
+            isOpen={widgetControl?.current.location}
+            setIsOpen={() => {
+                openWidget("location")
+            }}            
             wposition={{
                 // border:"2px solid blue",
                 position:"absolute",
@@ -38,7 +40,7 @@ export default function Location({noWidget}){
 
             
 
-            <ClosedContent isOpen={isOpen} >
+            <ClosedContent isOpen={widgetControl?.current.location} >
                 <div className={styles.closedContent}>
                     {/* img */}
                     <Image
@@ -55,7 +57,7 @@ export default function Location({noWidget}){
                 </div>    
             </ClosedContent>
            
-            <OpenContent isOpen={isOpen} >
+            <OpenContent isOpen={widgetControl?.current.location} >
                 <div className={styles.openContent}>
                     <p>This is the widget open</p>
                 </div>  
