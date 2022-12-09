@@ -42,7 +42,7 @@ OPEN WIDGET STYLING
 **/
 .openContent {
     /* border: 5px solid black; */
-    background: rgb(243,243,243);
+    background: rgb(217,217,217);
     min-height: 110vh;
     width: 100%;
 
@@ -52,13 +52,12 @@ OPEN WIDGET STYLING
 .imgbox {
     /* border: 2px solid red; */
     background: gray;
-    flex-grow: .4;
+    flex-grow: .5;
     position:relative;
 }
 .schedulebox {
-    /* border: 2px solid blue; */
-    background: rgb(243,243,243);
-    background: linear-gradient(0deg, rgba(243,243,243,1) 70%, rgba(243,243,243,1) 80%, rgba(242,242,242,0.80) 87%, rgba(217,217,217,0.40129555240064774) 94%, rgba(217,217,217,0.06796221906731448) 100%);
+    background: rgb(217,217,217);
+    background: linear-gradient(0deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 49%, rgba(217,217,217,1) 66%, rgba(217,217,217,1) 86%, rgba(217,217,217,0.06796221906731448) 100%);
     padding-top: 100px;
 
     flex-grow: .6;

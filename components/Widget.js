@@ -10,7 +10,7 @@ export default function Widget(props){
         isOpen, setIsOpen, 
         wposition, background,
         height, width,
-        children} = props;
+        children } = props;
 
     const [wopen, setWOpen] = useState(false);
     const [fixed, setFixed] = useState(false);
@@ -28,6 +28,7 @@ export default function Widget(props){
         }, 1200);
     }, [isOpen]);
 
+    
     let cvariants = {
         open:{
             /**
