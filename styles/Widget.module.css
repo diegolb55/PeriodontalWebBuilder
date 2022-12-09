@@ -2,8 +2,7 @@
 
 
 .widgetCover {
-    /* border: 3px solid yellow; */
-
+    /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,9 +20,9 @@
 
 
 .widget {
-    background: rgb(0, 128, 0);
     height: 100%;
     width: 100%;
+    /* border: 2px solid black; */
 }
 
 
@@ -32,7 +31,13 @@
 }
 .fixed {
    position: fixed;
+   
 }
 .absolute{
     position: absolute;
+}
+.colors {
+    color: #8d8db5;
+   background: #ffffff;
+   color: #F3F3F3
 }

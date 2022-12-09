@@ -15,48 +15,9 @@ export default function Horario({noWidget}){
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const obj = [
-        {
-            day: "domingo",
-            time: "--",
-            location: "--"
-        },
-        {
-            day: "lunes",
-            time: "9am - 5pm",
-            location: "Ponce",
-        },
-        {
-            day: "martes",
-            time: "9am - 5pm",
-            location: "Manati",
-        },
-        {
-            day: "miercoles",
-            time: "--",
-            location: "--"
-        },
-        {
-            day: "jueves",
-            time: "9am - 5pm",
-            location: "Manati",
-        },
-        {
-            day: "viernes",
-            time: "9am - 5pm",
-            location: "Manati",
-        },
-        {
-            day: "sabado",
-            time: "--",
-            location: "--"
-        },
-    ]
-        
     let date = new Date();
-    const schedule = new PeriodontalSchedule(obj, date);
+    const schedule = new PeriodontalSchedule( date );
 
-    console.log(schedule.currentSchedule())
 
     if (noWidget) {
         return (
@@ -116,7 +77,7 @@ export default function Horario({noWidget}){
             }}
             height={120}
             width={120}
-            background={["white", "white"]}
+            background={["#ffffff", "#d9d9d9"]}
         >
 
             
@@ -127,8 +88,6 @@ export default function Horario({noWidget}){
                         <AiOutlineClockCircle className={styles.cclock}/>
                         <p>{ schedule.isOpen() ? "abierto" : "cerrado"}, Manatí</p>
                     </div>
-                    {/* <p>Lunes: 9AM - 5PM</p> */}
-                    { schedule.getThreeRows() }
                     <p>{schedule.currentSchedule()[0].day}: {schedule.currentSchedule()[0].time}</p>
                 </div>    
             </ClosedContent>

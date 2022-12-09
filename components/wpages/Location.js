@@ -12,11 +12,13 @@ export default function Location({noWidget}){
     const [isOpen, setIsOpen] = useState(false);
 
     if(noWidget){ 
+
         return (
             <div className={styles.openContent}>
                 <p>This is the widget open</p>
             </div>  
         )
+
     }
 
     return (
@@ -31,7 +33,7 @@ export default function Location({noWidget}){
             }}
             height={120}
             width={120}
-            background={["rgb(141, 141, 181)", "green"]}
+            background={["#ffffff", "#ffffff"]}
         >
 
             
@@ -40,7 +42,7 @@ export default function Location({noWidget}){
                 <div className={styles.closedContent}>
                     {/* img */}
                     <Image
-                        src="/images/horario.jpg"
+                        src="/images/location.png"
                         alt=""
                         layout="fill"
                         objectFit='cover'
