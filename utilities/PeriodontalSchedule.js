@@ -66,13 +66,14 @@ export default class PeriodontalSchedule {
         return this.schedule.map( (d, index) => {
             
             if (this.date?.getDay() == index){
-                return <p style={{
+                return <p key={Math.random()} 
+                        style={{
                         color: this.isOpen() ? "red" : "white", 
                         fontSize: "1.2rem", 
                         fontWeight:"bolder"}}
                     >{ d.day }</p>
             }
-            return <p>{ d.day }</p>
+            return <p key={Math.random()} >{ d.day }</p>
         } );
     }
 
@@ -80,12 +81,13 @@ export default class PeriodontalSchedule {
         return this.schedule.map( (d, index) => {
             
             if (this.date?.getDay() == index){
-                return <p style={{
+                return <p key={Math.random()}  
+                    style={{
                     color: this.isOpen() ? "red" : "white", 
                     fontSize: "1.2rem", 
                     fontWeight:"bolder"}}>{ d.time }</p>
             }
-            return <p>{ d.time }</p>
+            return <p key={Math.random()} >{ d.time }</p>
         } );
     }
 
@@ -93,13 +95,14 @@ export default class PeriodontalSchedule {
         return this.schedule.map( (d, index) => {
             
             if (this.date?.getDay() == index){
-                return <p style={{
+                return <p key={Math.random()} 
+                        style={{
                         color: this.isOpen() ? "red" : "white", 
                         fontSize: "1.2rem", 
                         fontWeight:"bolder"}}>
                     { d.location }</p>
             }
-            return <p>{ d.location }</p>
+            return <p key={Math.random()} >{ d.location }</p>
         } );
     }
     

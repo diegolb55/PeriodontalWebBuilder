@@ -9,16 +9,23 @@ import Link from "next/link"
 export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl }) {
 
     const [open, setOpen] = useState(false);
+    // console.log(widgetControl?.current.location || fill)
+
+    const variants = {
+        color:{
+            background: "rgb(217, 217, 217)",
+            boxShadow:"0px -2px 15px 0px rgba(114,196,145,0.75) inset"
+        },
+        nocolor:{
+            background: "rgba(217, 217, 217, 0)",
+            boxShadow:"none",
+        }
+    }
 
     return (
         <motion.div  className="navbar" 
-            animate={{
-                background: widgetControl?.current.location || fill ?
-                "#d9d9d9" : "#d9d9d900",
-                boxShadow: widgetControl?.current.location || fill ?
-                "0px -2px 15px 0px rgba(114,196,145,0.75) inset" : "none",
-                
-            }}
+            variants={variants}
+            animate={ widgetControl?.current.location || fill ? "color" : "nocolor"}
             transition={{duration: 1.5}}
             >
 

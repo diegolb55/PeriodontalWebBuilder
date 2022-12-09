@@ -60,7 +60,11 @@ export default function Home() {
     <div className={styles.container}>
       
       <LandingWrapper/>
-      <NavBar isHome={true} closeAllWidgets={closeAllWidgets} widgetControl={widgetControl}/>
+      <NavBar 
+        isHome={true} 
+        closeAllWidgets={closeAllWidgets} 
+        widgetControl={widgetControl}
+      />
       
       <div style={{
         // border:"2px solid black",
