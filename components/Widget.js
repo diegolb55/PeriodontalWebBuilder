@@ -8,7 +8,7 @@ export default function Widget(props){
 
     const {
         isOpen, setIsOpen, 
-        wposition, background,
+        background,
         height, width,
         children } = props;
 
@@ -73,7 +73,7 @@ export default function Widget(props){
 
 
     return (
-        <div style={wposition} >
+        <div >
 
             <motion.div  className={`${styles.widgetCover} `}
                 variants={cvariants}
