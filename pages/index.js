@@ -3,9 +3,13 @@ import styles from "../styles/Home.module.css";
 
 import LandingWrapper from "../components/LandingWrapper"
 import NavBar from "../components/NavBar";
+
 import Horario from "../components/wpages/Horario";
 import Location from "../components/wpages/Location";
 import Services from "../components/wpages/Services";
+import Equipo from "../components/wpages/Equipo";
+import Cita from "../components/wpages/Cita";
+import MetodosDePago from "../components/wpages/MetodosDePago";
 
 import { useState, useEffect, useRef} from "react"
 
@@ -22,6 +26,9 @@ export default function Home() {
     horario: false,
     location: false,
     services: false,
+    equipo: false,
+    cita: false,
+    metodosDePago: false,
   });
   const closeAllWidgets = () => {
     for (let p in widgetControl.current){
@@ -34,14 +41,26 @@ export default function Home() {
     // closeAllPages();
 
     switch(s){
-      // case "home":
-      //   goHome();
-      //   break;
+      
       case "horario":
         widgetControl.current.horario = true;
         break;
       case "location":
         widgetControl.current.location = true;
+        break;
+      case "services":
+        widgetControl.current.services = true;
+        break;
+      case "equipo":
+        widgetControl.current.equipo = true;
+        break;
+      case "cita":
+        widgetControl.current.cita = true;
+        break;
+      case "metodosDePago":
+        widgetControl.current.metodosDePago = true;
+        break;
+      default:
         break;
       
     };
@@ -66,43 +85,44 @@ export default function Home() {
         widgetControl={widgetControl}
       />
       
-      <div style={{
-          // border: "2px solid black",
-          position: "absolute",
-          width: "100%",
-          top: "120vh",
+      <div className={styles.absolutewrapper}>
+        {/* section1 */}
+        <div className={styles.section1}>
+          <div >
+            <div>
+              <Horario widgetControl={widgetControl} openWidget={openWidget}/>
+              <Location widgetControl={widgetControl} openWidget={openWidget}/>
+            </div>
+            <Services widgetControl={widgetControl} openWidget={openWidget}/>
+          </div>
 
-          display:"flex",
-          justifyContent:"space-around",
-          alignItems:"center",
-          flexWrap:"wrap",
+          <div className={styles.videowrapper}>
+            <iframe 
+              
+              src="https://www.youtube.com/embed/-hVy_jxeMeA" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allowfullscreen></iframe>
 
-      }}>
-        <div style={{
-          // border: "2px solid blue",
-          height: "50vh",
-          width: "100%",
-          position: "relative",
-          maxWidth: 500,
-        }}>
-          <Horario widgetControl={widgetControl} openWidget={openWidget}/>
-          <Location widgetControl={widgetControl} openWidget={openWidget}/>
-          <Services widgetControl={widgetControl} openWidget={openWidget}/>
+          </div>
         </div>
 
-        <div className={styles.videowrapper}>
-        <iframe 
-          // width="560" 
-          // height="315" 
-          src="https://www.youtube.com/embed/-hVy_jxeMeA" 
-          title="YouTube video player" 
-          frameborder="0" 
-          // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen></iframe>
+
+        {/* Section 2 */}
+        <div className={styles.section2}>
+
+            <div style={{}}>
+              <Equipo widgetControl={widgetControl} openWidget={openWidget}/>
+            </div>
+
+            <div styke={{}}>
+              <Cita widgetControl={widgetControl} openWidget={openWidget}/>
+              <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/>
+            </div>
 
         </div>
+
       </div>
-
       
 
     </div>

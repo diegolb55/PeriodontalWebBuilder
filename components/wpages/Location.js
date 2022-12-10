@@ -9,7 +9,6 @@ import Image from "next/image"
 
 export default function Location({noWidget, widgetControl, openWidget}){
 
-    const [isOpen, setIsOpen] = useState(false);
 
     if(noWidget){ 
 
@@ -27,12 +26,7 @@ export default function Location({noWidget, widgetControl, openWidget}){
             setIsOpen={() => {
                 openWidget("location")
             }}            
-            wposition={{
-                // border:"2px solid blue",
-                position:"absolute",
-                bottom: 0,
-                left: 50,
-            }}
+           
             height={120}
             width={120}
             background={["#ffffff", "#ffffff"]}

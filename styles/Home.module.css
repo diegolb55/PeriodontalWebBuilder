@@ -1,8 +1,42 @@
 .container {
   /* border: 3px solid black; */
   position: relative;
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
 
+}
+
+
+.absolutewrapper {
+  border: 2px solid black;
+  position: absolute;
+  top: 120vh;
+  width: 100%;
+}
+.section1{
+  /* border: 2px solid red; */
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section1 > div:nth-child(1){
+  /* border: 2px solid blue; */
+  padding: 50px 70px;
+  height: 50vh;
+  width: 100%;
+
+  max-width: 500px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.section1 > div:nth-child(1) > div:nth-child(1){
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .videowrapper {
@@ -12,16 +46,51 @@
   z-index: 10;
   height: 300px;
   width: 80%;
-  margin: 50px 0;
+  margin: 100px 0;
   max-width: 500px;
 }
 .videowrapper iframe {
-  position: absolute;
   border-radius: 25px;
-  top: 0;
-  left: 0;
+  
   height: 100%;
   width: 100%;
 }
 
 
+.section2 {
+  /* border: 2px solid blue; */
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  
+  flex-direction: column;
+}
+.section2 > div:nth-child(1){
+  margin: 50px 0;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+}
+.section2 > div:nth-child(2){
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-around;
+
+  
+  
+}
+
+@media screen and (min-width: 600px) {
+  .section2 {
+    flex-direction: row;
+    padding: 0 20vw;
+  }
+ 
+  .section2 > div:nth-child(2){
+    flex-direction: column;
+    justify-content: space-around;
+    
+    
+  }
+}

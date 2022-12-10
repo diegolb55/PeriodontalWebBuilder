@@ -70,12 +70,7 @@ export default function Horario({noWidget, widgetControl, openWidget}){
             setIsOpen={() => {
                 openWidget("horario")
             }}
-            wposition={{
-                position:"absolute",
-                top: 0,
-                left: 50,
-                // border: "2px solid blue",
-            }}
+            
             height={120}
             width={120}
             background={["#ffffff", "#d9d9d9"]}

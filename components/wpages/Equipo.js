@@ -5,7 +5,7 @@ import Widget from "../Widget"
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
 
-export default function Services({noWidget, widgetControl, openWidget}){
+export default function Equipo({noWidget, widgetControl, openWidget}){
 
 
     if(noWidget){ 
@@ -18,25 +18,25 @@ export default function Services({noWidget, widgetControl, openWidget}){
 
     return (
         <Widget
-            isOpen={widgetControl?.current.services}
+            isOpen={widgetControl?.current.equipo}
             setIsOpen={() => {
-                openWidget("services")
+                openWidget("equipo")
             }}  
           
-            height={"100%"}
-            width={120}
+            height={200}
+            width={200}
             background={["rgb(141, 141, 181)", "green"]}
         >
 
             
 
-            <ClosedContent isOpen={widgetControl?.current.services} >
+            <ClosedContent isOpen={widgetControl?.current.equipo} >
                 <div className={styles.closedContent}>
-                    <p>Services</p>
+                    <p>Equipo</p>
                 </div>    
             </ClosedContent>
            
-            <OpenContent isOpen={widgetControl?.current.services} >
+            <OpenContent isOpen={widgetControl?.current.equipo} >
                 <div className={styles.openContent}>
                     <p>This is the widget open</p>
                 </div>  
