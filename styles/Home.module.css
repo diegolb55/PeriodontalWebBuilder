@@ -7,9 +7,10 @@
 
 
 .absolutewrapper {
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  z-index: 10;
   position: absolute;
-  top: 120vh;
+  top: 110vh;
   width: 100%;
 }
 .section1{
@@ -17,15 +18,15 @@
   position: relative;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 .section1 > div:nth-child(1){
   /* border: 2px solid blue; */
-  padding: 50px 70px;
   height: 50vh;
   width: 100%;
+  padding: 0 5vh; 
 
   max-width: 500px;
 
