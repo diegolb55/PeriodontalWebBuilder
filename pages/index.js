@@ -10,6 +10,8 @@ import Services from "../components/wpages/Services";
 import Equipo from "../components/wpages/Equipo";
 import Cita from "../components/wpages/Cita";
 import MetodosDePago from "../components/wpages/MetodosDePago";
+import Implant from "../components/Implant";
+
 
 import { useState, useEffect, useRef} from "react"
 
@@ -86,6 +88,11 @@ export default function Home() {
       />
       
       <div className={styles.absolutewrapper}>
+
+        {/* Model */}
+        
+        <Implant />
+
         {/* section1 */}
         <div className={styles.section1}>
           <div >
@@ -101,8 +108,8 @@ export default function Home() {
               
               src="https://www.youtube.com/embed/-hVy_jxeMeA" 
               title="YouTube video player" 
-              frameborder="0" 
-              allowfullscreen></iframe>
+              frameBorder="0" 
+              allowFullScreen></iframe>
 
           </div>
         </div>

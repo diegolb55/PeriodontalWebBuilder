@@ -1,0 +1,8 @@
+Model Information:
+* title:	Tooth Implant
+* source:	https://sketchfab.com/3d-models/tooth-implant-dcfc91171cd34b6780a23a42effd29fc
+* author:	Osmany.Areas (https://sketchfab.com/Osmany.Areas)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
