@@ -49,10 +49,13 @@ export default class PeriodontalSchedule {
 
     isOpen() {
         let t = ( this.date.getHours()) + ( this.date.getMinutes() * .01 );
-        if (t < 9 || t > 17 ){
-            return false
+        let h = t > 9 || t < 17;
+        let d = this.date.getDay() > 0 && this.date.getDay() < 6
+
+        if (  h && d ){
+            return true
         }
-        return true;
+        return false;
     }
 
     currentSchedule(){
