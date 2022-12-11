@@ -1,19 +1,53 @@
 import styles from "../styles/LandingWrapper.module.css"
+import Widgets from "./Widgets"
+import NavBar from "./NavBar";
+import { useState, useRef } from "react";
+import Implant from "../components/Implant";
 
 
 export default function LandingWrapper() {
+
+    const [, forceRender] = useState(Date.now());
+
+    // object reference
+    const widgetControl = useRef({
+        horario: false,
+        location: false,
+        services: false,
+        equipo: false,
+        cita: false,
+        metodosDePago: false,
+    });
+    const closeAllWidgets = () => {
+        for (let p in widgetControl.current){
+        widgetControl.current[p] = false;
+        }
+        forceRender(Date.now());
+    }
+
     return (
         <div className={styles.wrapper}>
+            {/* NAVIGATION */}
+            <NavBar 
+                isHome={true} 
+                closeAllWidgets={closeAllWidgets} 
+                widgetControl={widgetControl}
+            />
+
+            {/* BACKGROUND BOXES */}
             <div className={styles.sec12}>
                 <div className={styles.b1}></div>
                 <div className={styles.b2}>
                     <p>bienvenidos</p>
-                    <h2>Periodontal & Oral Health</h2>
+                    <h2>Periodontal &<br/> Oral Health</h2>
                     <p>Dr Gaspar Lugo Morales</p>
                 </div>
             </div>
-
             <div className={styles.sec34}>
+
+                {/*  3D -- Model */}
+                <Implant />
+
                 <div className={styles.b3}>
                     <p>Contactanos para<br/> citas y preguntas</p>
                     <button>llamar</button>
@@ -30,24 +64,22 @@ export default function LandingWrapper() {
                     </div>
                 </div>
             </div>
-
-            <div className={styles.sec567}>
+            <div className={styles.sec5678}>
                 <div className={styles.b5}></div>
                 <div className={styles.b6}></div>
                 <div className={styles.b7}></div>
-            </div>
-
-            <div className={styles.sec891011}>
                 <div className={styles.b8}></div>
-                <div className={styles.b9}>
-                    <div></div>
-                </div>
+
+            </div>
+            <div className={styles.sec91011}>
+                <div className={styles.b9}></div>
                 <div className={styles.b10}></div>
                 <div className={styles.b11}></div>
 
             </div>
 
-
+            {/* WIDGETS */}
+            <Widgets widgetControl={widgetControl}/>
 
         </div>
     )

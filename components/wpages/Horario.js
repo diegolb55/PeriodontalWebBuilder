@@ -82,7 +82,12 @@ export default function Horario({noWidget, widgetControl, openWidget}){
                 <div className={styles.closedContent}>
                     <div className={styles.cheader}>
                         <AiOutlineClockCircle className={styles.cclock}/>
-                        <p>{ schedule.isOpen() ? "abierto" : "cerrado"}, Manatí</p>
+                        {
+                            schedule.isOpen() ? 
+                            <p>abierto, location</p>
+                            :
+                            <p>cerrado</p>
+                        }   
                     </div>
                     <p>{schedule.currentSchedule()[0].day}: {schedule.currentSchedule()[0].time}</p>
                 </div>    

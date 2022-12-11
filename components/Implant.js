@@ -70,14 +70,13 @@ export default function Implant(){
     return (
         <div style={{
             // border: "2px solid red",
-            height: 300,
-            width: "50vw",
-            maxWidth: 400,
+           
+            height: "100%",
+
             position:"absolute",
-            top:"-400px",
-            zIndex: 10,
+            bottom: 0,
             right: 0,
-            overflow:'hidden'
+            zIndex: 10,
         }}>
             <Canvas>
                 {/* <CameraControls/> */}
