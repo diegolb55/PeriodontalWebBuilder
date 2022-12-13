@@ -42,7 +42,7 @@ const CameraControls = () => {
     } = useThree();
     const controls = useRef();
     useFrame((state) => controls.current.update());
-    return <orbitControls ref={controls} args={[camera, domElement]} enableZoom={true} target={[-15, 0, 0]} />;
+    return <orbitControls ref={controls} args={[camera, domElement]} enableZoom={false} enablePan={false} enableRotate={false} target={[-15, 0, 0]} />;
 };
 
 export default function Implant(){
