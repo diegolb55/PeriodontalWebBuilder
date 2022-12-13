@@ -14,8 +14,33 @@ export default function Location({noWidget, widgetControl, openWidget}){
 
         return (
             <div className={styles.openContent}>
-                <p>This is the widget open</p>
-            </div>  
+            <div className={styles.mapbox}>
+                <p>Trabajamos dos localizaciones distintas</p>
+            </div>
+            <div className={styles.infobox}>
+
+                <div className={styles.box}>
+                    <div>
+                        <p>Ponce</p>
+                    </div>
+                    <div className={styles.boxRow}>
+                        <p>Llamar</p>
+                        <p>787-777-7777</p>
+                        <button>call</button>
+                    </div>
+                    <div className={styles.boxRow}>
+                        <p>Mapa</p>
+                        <p>calle...</p>
+                        <button>call</button>
+                    </div>
+                    <div className={styles.boxRow}>
+                        <p>Horario</p>
+                        <p>-- </p>
+                        <button>call</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
         )
 
     }
@@ -53,7 +78,32 @@ export default function Location({noWidget, widgetControl, openWidget}){
            
             <OpenContent isOpen={widgetControl?.current.location} >
                 <div className={styles.openContent}>
-                    <p>This is the widget open</p>
+                    <div className={styles.mapbox}>
+                        <p>Trabajamos dos localizaciones distintas</p>
+                    </div>
+                    <div className={styles.infobox}>
+
+                        <div className={styles.box}>
+                            <div>
+                                <p>Ponce</p>
+                            </div>
+                            <div className={styles.boxRow}>
+                                <p>Llamar</p>
+                                <p>787-777-7777</p>
+                                <button>call</button>
+                            </div>
+                            <div className={styles.boxRow}>
+                                <p>Mapa</p>
+                                <p>calle...</p>
+                                <button>call</button>
+                            </div>
+                            <div className={styles.boxRow}>
+                                <p>Horario</p>
+                                <p>-- </p>
+                                <button>call</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>  
             </OpenContent>
               
