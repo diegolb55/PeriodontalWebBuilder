@@ -23,7 +23,7 @@ export default function Services({noWidget, widgetControl, openWidget}){
                 openWidget("services")
             }}  
           
-            height={"100%"}
+            height={340}
             width={120}
             background={["rgb(141, 141, 181)", "green"]}
         >

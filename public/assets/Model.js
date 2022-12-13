@@ -21,6 +21,7 @@ export function Model(props) {
         rotation: active ? [0, 0, 0] : [.5, 0, .3],
         position: active ? [0, 0, -10] : [5, 0, 0],
 
+
         config: config.wobbly,
     })
 
@@ -61,6 +62,9 @@ export function Model(props) {
     }
 
     return (
+        <>
+        <animated.pointLight  position={[0, 30, 0]} color={springs.color} intensity={1}/>
+
         <animated.group 
             ref={group} 
             {...props} dispose={null} 
@@ -148,6 +152,7 @@ export function Model(props) {
             />
         
         </animated.group>
+        </>
         
     );
 }

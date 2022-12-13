@@ -18,6 +18,51 @@ export default function LandingWrapper() {
         cita: false,
         metodosDePago: false,
     });
+
+    // widget references
+    const horarioRef = useRef();
+    const locationRef = useRef();
+    const servicesRef = useRef();
+
+    
+    const openWidget = (s) => {
+
+        // closeAllPages();
+
+        switch(s){
+        
+        case "horario":
+            widgetControl.current.horario = true;
+            break;
+        case "location":
+            widgetControl.current.location = true;
+            break;
+        case "services":
+            widgetControl.current.services = true;
+            break;
+        case "equipo":
+            widgetControl.current.equipo = true;
+            break;
+        case "cita":
+            widgetControl.current.cita = true;
+            break;
+        case "metodosDePago":
+            widgetControl.current.metodosDePago = true;
+            break;
+        default:
+            break;
+        
+        };
+        /**
+         * Rendering index and widget pages again, so that 
+         * the pages evaluate the updated ref value and change accordingly. 
+         */
+        setTimeout(()=>{
+        forceRender(Date.now());
+        }, 100)
+        
+    }
+
     const closeAllWidgets = () => {
         for (let p in widgetControl.current){
         widgetControl.current[p] = false;
@@ -94,7 +139,7 @@ export default function LandingWrapper() {
             </div>
 
             {/* WIDGETS */}
-            <Widgets widgetControl={widgetControl}/>
+            <Widgets widgetControl={widgetControl} openWidget={openWidget}/>
 
         </div>
     )

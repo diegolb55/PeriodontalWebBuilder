@@ -9,7 +9,6 @@ import Link from "next/link"
 export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl }) {
 
     const [open, setOpen] = useState(false);
-    // console.log(widgetControl?.current.location || fill)
 
     const variants = {
         color:{
@@ -22,10 +21,14 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
         }
     }
 
+    let background =  widgetControl?.current.location 
+                    || widgetControl?.current.services 
+                    || fill;
+
     return (
         <motion.div  className="navbar" 
             variants={variants}
-            animate={ widgetControl?.current.location || fill ? "color" : "nocolor"}
+            animate={background ? "color" : "nocolor"}
             transition={{duration: 1.5}}
             >
 

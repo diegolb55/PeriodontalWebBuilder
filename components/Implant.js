@@ -26,8 +26,8 @@ const ImplantModel = () => {
 const Lighting = () => {
     return (
         <>
-            <pointLight  position={[15, 30, 30]} color="white" intensity={.5}/>
-            <pointLight  position={[15, -20, 20]} color="gold" intensity={1}/>
+            <pointLight  position={[15, 40, 30]} color="white" intensity={1}/>
+            <pointLight  position={[15, -40, 30]} color="gold" intensity={1}/>
             <ambientLight intensity={.8} />
         </>
     )
