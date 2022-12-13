@@ -18,7 +18,9 @@ export function Model(props) {
     
     const springs = useSpring({
         scale: active ? [1.3, 1.3, 1.3] : [.9, .9, .9],
-        rotation: active ? [0, 0, 0] : [0, 0, 0],
+        rotation: active ? [0, 0, 0] : [.5, 0, .3],
+        position: active ? [0, 0, -10] : [5, 0, 0],
+
         config: config.wobbly,
     })
 
@@ -62,11 +64,11 @@ export function Model(props) {
         <animated.group 
             ref={group} 
             {...props} dispose={null} 
-            position={[0, 0, 0]}
+            position={springs.position}
 
             onClick={() => handleClick()}
             scale={springs.scale}
-            // rotation={[.6, .5, .2]}
+
             rotation={springs.rotation}
 
             
@@ -136,7 +138,6 @@ export function Model(props) {
                 scale={[.05, .05, .05]}
                 position={[0, -12, 0]}
                 
-            
                 geometry={ nodes.screw_steel_0_2.geometry }
                 material={ materials["steel"] }
                 matrixWorld={ nodes.screw_steel_0.matrixWorld}
@@ -144,7 +145,6 @@ export function Model(props) {
                 castShadow
                 receiveShadow
 
-                
             />
         
         </animated.group>

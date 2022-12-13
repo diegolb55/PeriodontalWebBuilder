@@ -49,7 +49,7 @@ export default function LandingWrapper() {
 
                 {/*  3D -- Model */}
                 <div style={{
-                        border: "2px solid red",
+                        // border: "2px solid red",
                     
                         height: "100%",
                         width: "100%",
