@@ -1,4 +1,4 @@
-import styles from "../../styles/Services.module.css"
+import styles from "../../styles/Tratamientos.module.css"
 import { useState } from "react"
 import Widget from "../Widget"
 

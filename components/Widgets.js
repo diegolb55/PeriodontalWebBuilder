@@ -5,7 +5,7 @@ import styles from "../styles/Widgets.module.css";
 
 import Horario from "../components/wpages/Horario";
 import Location from "../components/wpages/Location";
-import Services from "../components/wpages/Services";
+import Tratamientos from "../components/wpages/Tratamientos";
 import Equipo from "../components/wpages/Equipo";
 import Cita from "../components/wpages/Cita";
 import MetodosDePago from "../components/wpages/MetodosDePago";
@@ -31,7 +31,7 @@ export default function Widgets({ widgetControl, openWidget }){
                 <Horario widgetControl={widgetControl} openWidget={openWidget}/>
                 <Location widgetControl={widgetControl} openWidget={openWidget}/>
                 </div>
-                <Services widgetControl={widgetControl} openWidget={openWidget}/>
+                <Tratamientos widgetControl={widgetControl} openWidget={openWidget}/>
             </div>
 
             <div className={styles.videowrapper}>
