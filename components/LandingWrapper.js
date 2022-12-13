@@ -27,6 +27,8 @@ export default function LandingWrapper() {
 
     return (
         <div className={styles.wrapper}>
+
+             
             {/* NAVIGATION */}
             <NavBar 
                 isHome={true} 
@@ -46,7 +48,20 @@ export default function LandingWrapper() {
             <div className={styles.sec34}>
 
                 {/*  3D -- Model */}
-                <Implant />
+                <div style={{
+                        border: "2px solid red",
+                    
+                        height: "100%",
+                        width: "100%",
+                        maxWidth:700,
+
+                        position:"absolute",
+                        bttom: 0,
+                        right: 0,
+                        zIndex: 10,
+                    }}>
+                    <Implant />
+                </div>
 
                 <div className={styles.b3}>
                     <p>Contactanos para<br/> citas y preguntas</p>

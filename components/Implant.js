@@ -5,39 +5,20 @@ import { Canvas, useFrame,
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { PerspectiveCamera } from '@react-three/drei'
+import { Model } from "../public/assets/Model";
 
 
 
-const ImplantScene = () => {
-    const gltf = useLoader(GLTFLoader, '/assets/scene.gltf')
 
+const ImplantModel = () => {
 
-    gltf.scene.children[0].rotation.set(-1, -.2, .5)
+   
 
-
-    useFrame(({clock}) => {
-        const x = ( Math.sin( clock .getElapsedTime() / 1 ) ) * 1;
-        const y = -2 + ( Math.cos( clock .getElapsedTime() / 1 ) ) * .5;
-        
-        const z = ( Math.sin( clock.getElapsedTime() / 5  ) ) * 4 ;
-
-
-        // translation
-        gltf.scene.children[0].position.x = x;
-        gltf.scene.children[0].position.y = y;
-
-        // rotation
-        gltf.scene.children[0].rotation.z = z;
-
-        
-
-
-    })
-
-
+   
+    
     return (
-        <Suspense>
-            <primitive object={gltf.scene} />
+        <Suspense fallback={null}>
+            <Model/>
         </Suspense>
     )
 }
@@ -45,10 +26,9 @@ const ImplantScene = () => {
 const Lighting = () => {
     return (
         <>
-            <pointLight  position={[-2, 2, 4]} color="white" intensity={.5}/>
-            <pointLight  position={[-4, -2, 2]} color="gold" intensity={1}/>
-
-            <ambientLight intensity={.3} />
+            <pointLight  position={[15, 30, 30]} color="white" intensity={.5}/>
+            <pointLight  position={[15, -20, 20]} color="gold" intensity={1}/>
+            <ambientLight intensity={.8} />
         </>
     )
 }
@@ -60,32 +40,22 @@ const CameraControls = () => {
       camera,
       gl: { domElement },
     } = useThree();
-    // Ref to the controls, so that we can update them on every frame using useFrame
     const controls = useRef();
     useFrame((state) => controls.current.update());
-    return <orbitControls ref={controls} args={[camera, domElement]} enableZoom={false} />;
+    return <orbitControls ref={controls} args={[camera, domElement]} enableZoom={true} target={[-15, 0, 0]} />;
 };
 
 export default function Implant(){
+
+
     return (
-        <div style={{
-            // border: "2px solid red",
-           
-            height: "100%",
-
-            position:"absolute",
-            bottom: 0,
-            right: 0,
-            zIndex: 10,
-        }}>
+        
             <Canvas>
-                {/* <CameraControls/> */}
-                <PerspectiveCamera makeDefault fov={75} position={[-2, .5, 6.5]}/>
-
-                <ImplantScene />
+                <CameraControls/>
+                <PerspectiveCamera makeDefault fov={75} position={[0, 20, 25]}/>
+                <ImplantModel />
                 <Lighting/>
             </Canvas>
-        </div>
         
     )
 }
