@@ -20,7 +20,7 @@ export default function Horario({noWidget, widgetControl, openWidget}){
 
     if (noWidget) {
         return (
-            <div className={styles.openContent}>
+            <div className={styles.openContent} style={{height:"120vh"}}>
                     <div className={styles.imgbox}>
                         <Image
                             src="/images/horario.jpg"
@@ -30,6 +30,8 @@ export default function Horario({noWidget, widgetControl, openWidget}){
 
                         />
                     </div>
+                    <div className={styles.boxgradient}></div>
+
                     <div className={styles.schedulebox}>
                         <p>Horas de Oficina</p>
                         <div className={styles.schedule}>
@@ -104,6 +106,8 @@ export default function Horario({noWidget, widgetControl, openWidget}){
 
                         />
                     </div>
+                    <div className={styles.boxgradient}></div>
+
                     <div className={styles.schedulebox}>
                         <p>Horas de Oficina</p>
                         <div className={styles.schedule} style={ schedule.isOpen() ? {} : {background: "#9A9A9A"} }>

@@ -45,7 +45,6 @@ export default function Widget(props){
             position: fixed ? "fixed" : "relative",
             zIndex: 11,
             overflowY: "scroll",
-            background: background[1]
 
            
         },
