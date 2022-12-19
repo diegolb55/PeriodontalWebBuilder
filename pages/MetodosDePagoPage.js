@@ -1,12 +1,12 @@
-import Tratamientos from "../components/wpages/Tratamientos";
 import NavBar from "../components/NavBar";
-
+import MetodosDePago from "../components/wpages/MetodosDePago";
 
 export default function LocationPage(){
     return (
         <>
             <NavBar />
-            <Tratamientos noWidget={true} />
+            <MetodosDePago noWidget={true} style={{height: "100vh"}}/>
+
         </>
     )
 }
