@@ -10,7 +10,7 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
 
     const treatmentbox = () => {
         return (
-            <div className={styles.treatmentbox}>
+            <div className={styles.treatmentbox} >
                 <p>Gummy Smile</p>
                 <div></div>
                 <p>

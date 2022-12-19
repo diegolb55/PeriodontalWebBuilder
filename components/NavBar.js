@@ -98,7 +98,7 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                 <Link href="./LocationPage" className="link">
                     <p>Localizacion</p>
                 </Link>
-                <Link href="#" className="link">
+                <Link href="./MetodosDePagoPage" className="link">
                     <p>Metodos de Pago</p>
                 </Link>                   
                
