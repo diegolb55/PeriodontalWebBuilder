@@ -41,38 +41,51 @@
 OPEN WIDGET STYLING
 **/
 .openContent {
-    /* border: 5px solid black; */
-    background: rgb(217,217,217);
-    min-height: 110vh;
+    /* border: 5px solid red; */
+    /* background: rgb(217,217,217); */
+
+    height: 120%;
     width: 100%;
 
     display: flex;
     flex-direction: column;
+    position: relative;
+
+   
+}
+.boxgradient {
+    background: gray;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgb(217,217,217);
+    background: linear-gradient(0deg, rgba(217,217,217,1) 75%, rgba(217,217,217,0.9) 77%, rgba(217,217,217,0.5) 80%, rgba(217,217,217,0.4) 85%, rgba(217,217,217,0) 100%);
+
+
 }
 .imgbox {
-    /* border: 2px solid red; */
+    /* border: 2px solid blue; */
     background: gray;
-    flex-grow: .5;
+    flex-grow: .4;
     position:relative;
 }
 .schedulebox {
-    background: #d9d9d9;
-    background: linear-gradient(0deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 49%, rgba(217,217,217,1) 66%, rgba(217,217,217,1) 86%, rgba(217,217,217,0.06796221906731448) 100%);
-    padding-top: 100px;
+    /* border: 2px solid gray; */
 
+   
     flex-grow: .6;
-    width: 100%;
-    margin: 0 auto;
+   
 
     display: flex;
     flex-direction: column;
 
-    position: relative;
-    top: -100px;
+    
 
 }
 .schedulebox > p {
     /* border: 2px solid gray; */
+    position: relative;
     font-weight: bolder;
     font-size: 1.5rem;
     padding: 10px 0;
@@ -136,20 +149,15 @@ OPEN WIDGET STYLING
 @media screen and (min-width: 600px) {
   
     .openContent {
-        flex-direction: row;
-        justify-content: flex-end;
+        flex-direction: row-reverse;
+        border-color: blue;
+    }
+    .boxgradient {
+        background: rgb(217,217,217);
+        background: linear-gradient(90deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 43%, rgba(217,217,217,1) 54%, rgba(217,217,217,1) 65%, rgba(217,217,217,0.06796221906731448) 85%);
+    
     }
     
-    .schedulebox {
-        position: absolute;
-        top: auto;
-        padding: 100px 100px 0 0;
-        left: 50px;
-        width: 70%;
-        height: 110vh;
-        background: linear-gradient(90deg, rgba(243,243,243,1) 70%, rgba(243,243,243,1) 80%, rgba(242,242,242,0.80) 87%, rgba(217,217,217,0.40129555240064774) 94%, rgba(217,217,217,0.06796221906731448) 100%);
-
-    }
 }
 
 
