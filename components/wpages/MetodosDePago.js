@@ -10,46 +10,49 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
 
     if(noWidget){ 
         return (
-            <div className={styles.openContent} style={{height:"120vh"}}>
-                    <div>
-                        <div className={styles.pagos}>
-                            <div>
-                                <h4>Metodos de Pago</h4>
-                            </div>
-                            <div></div>
-                            <div>
-                                <div>
-                                    <div></div>
-                                    <p>ath business</p>
-                                </div>
-                                <div>
-                                    <div></div>
-                                    <p>efectivo</p>
-                                </div>
-                                <div>
-                                    <div></div>
-                                    <p>cheque</p>
-                                </div>
-                            </div>
+            <div className={styles.openContent} style={{height:"130vh"}}>
+                <div>
+                    <div className={styles.pagos}>
+                        <div>
+                            <h4>Metodos de Pago</h4>
                         </div>
-                        
-                        <div className={styles.planes}>
+                        <div></div>
+                        <div>
                             <div>
-                                <h4>Plan Medico</h4>
+                                <div></div>
+                                <p>ath business</p>
                             </div>
                             <div>
                                 <div></div>
-                                <p>triple S</p>
+                                <p>efectivo</p>
+                            </div>
+                            <div>
+                                <div></div>
+                                <p>cheque</p>
                             </div>
                         </div>
                     </div>
-                    <div className={styles.action}>
-                        <p>Para citas y preguntas no dude en llamar</p>
+                    
+                    <div className={styles.planes}>
+                        <div>
+                            <h4>Plan Medico</h4>
+                        </div>
+                        <div></div>
+                        <div>
+                            <div></div>
+                            <p>triple S</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.action}>
+                    <p>Para citas y preguntas no dude en llamar</p>
 
+                    <div>
                         <button>llamar</button>
-
                         <p>787-777-7777</p>
                     </div>
+                </div>
+
             </div>  
         )
     }

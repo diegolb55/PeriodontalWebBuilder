@@ -1,0 +1,49 @@
+.closedContent{
+    background: lightblue;
+    border-radius: 15px;
+    /* padding: 5px 2px; */
+    position: relative;
+
+    height: 100%;
+    overflow: hidden;
+    
+    
+}
+.gradientbox{
+    background: rgb(48,80,137);
+    background: linear-gradient(0deg, #72c492ca 20%, rgba(217,217,217,0) 100%);
+    position: relative;
+    height: 100%;
+    color: white;
+
+    
+}
+.gradientbox > p:nth-child(1) {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    font-size: 1.5rem;
+}
+
+
+
+
+.openContent {
+    /* border: 5px solid red; */
+    height: 300vh;
+    position: s;
+
+    display: flex;
+    flex-direction: column;
+
+}
+.history{
+    background: gray;
+        border: 5px solid red;
+
+    flex-grow: .4;
+}
+.staff {
+    border: 2px solid black;
+    flex-grow: .2;
+}
