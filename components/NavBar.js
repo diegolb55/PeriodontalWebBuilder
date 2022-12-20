@@ -89,7 +89,7 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                 <Link href="./HorarioPage" className="link">
                     <p>Horario</p>
                 </Link>
-                <Link href="#" className="link">
+                <Link href="./EquipoPage" className="link">
                     <p>Equipo</p>
                 </Link>
                 <Link href="./TratamientosPage" className="link">

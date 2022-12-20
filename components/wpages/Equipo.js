@@ -1,6 +1,7 @@
-import styles from "../../styles/Tratamientos.module.css"
+import styles from "../../styles/Equipo.module.css"
 import { useState } from "react"
 import Widget from "../Widget"
+import Image from "next/image"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
@@ -10,9 +11,14 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
 
     if(noWidget){ 
         return (
-            <div className={styles.openContent}>
-                <p>This is the widget open</p>
-            </div>  
+        <div className={styles.openContent}>
+            <div className={styles.history}></div>
+            <div className={styles.staff}></div>
+            <div className={styles.staff}></div>
+            <div className={styles.staff}></div>
+
+        
+        </div>  
         )
     }
 
@@ -24,21 +30,41 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
             }}  
           
             height={200}
-            width={200}
-            background={["rgb(141, 141, 181)", "green"]}
+            width={250}
+            background={["#72c492", "white"]}
         >
 
             
 
-            <ClosedContent isOpen={widgetControl?.current.equipo} >
+            <ClosedContent isOpen={widgetControl?.current.equipo} 
+                
+            >
                 <div className={styles.closedContent}>
-                    <p>Equipo</p>
-                </div>    
+                    {/* img */}
+                    <Image
+                        src="/images/dentalg.jpg"
+                        alt=""
+                        layout="fill"
+                        objectFit='cover'
+
+                    />
+                    <div className={styles.gradientbox}>
+                        <p>Equipo Dental <br/> acogedor</p>
+                        
+                        
+                    </div>
+                </div>      
             </ClosedContent>
            
             <OpenContent isOpen={widgetControl?.current.equipo} >
                 <div className={styles.openContent}>
-                    <p>This is the widget open</p>
+                    <div className={styles.history}></div>
+                    <div className={styles.staff}></div>
+                    <div className={styles.staff}></div>
+                    <div className={styles.staff}></div>
+
+                    
+
                 </div>  
             </OpenContent>
               
