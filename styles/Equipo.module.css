@@ -30,23 +30,19 @@
 
 .openContent {
     /* border: 5px solid red; */
-    height: 300vh;
-    position: s;
 
     display: flex;
     flex-direction: column;
 
 }
 .history{
-    border: 2px solid gray;
-    flex-grow: .2;
+    flex-grow: 1;
 
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
 .history > div:nth-child(1) {
-    background: coral;  
     height: 300px;
     width: 100%;
     max-width: 700px;
@@ -95,51 +91,105 @@
 
 
 .staff {
-    border: 2px solid black;
-    flex-grow: .3;
+    /* border: 2px solid black; */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.staff > div:nth-child(1){
-    background: gray;
-    height: 300px;
-    width: 300px;
-    border-radius: 100%;
+    flex-direction: column;
+    /* overflow: hidden; */
+    margin: 50px 0;
+
     
 }
-.staff > div:nth-child(2){
-    border: 2px solid gray;
-    height: 400px;
-    width: 400px;
-    position: relative;
-    top: -100px;
- 
+.imgbox{
+    /* background: lightgray; */
+    display: flex;
+    justify-content: flex-start;
+    
 }
-.staff > div:nth-child(2) > p:nth-child(1){
-    background: gray;
-    border: 5px solid white;
+.imgbox2 {
+    justify-content: flex-end;
+}
+.imgcircle {
+    background: red;
+    height: 350px;
+    width: 350px;
+    border-radius: 100%;
 
-    border-radius: 25%;
-    text-align: center;
-    height: 100px;
+    position: relative;
+    /* left: -50px; */
+    box-shadow: 0 0 15px 0 #72C491;
 }
-.staff > div:nth-child(2) > div {
+
+/* .staff > div:nth-child(2){
+    background: lightcoral;
+    
+} */
+.infobox {
+    /* border: 2px solid blue; */
     position: relative;
     top: -50px;
+
 }
-.staff > div:nth-child(2) > div > p {
+.name {
+    background: #435457;
+    height: 150px;
+    width: 100%;
+    padding-top: 10px;
+
+    border-radius:  140px 0 0 140px ;
+    border: 8px solid white;
+    border-right: none;
+
+    text-align: center;
+    color: white;
+    position: absolute;
+
+}
+.infodivs {
+    /* border: 3px solid gold; */
+    position: relative;
+    top: 50px;
+}
+.info {
     background: lightgray;
-    border: 5px solid white;
-    border-radius: 25%;;
-    padding: 20px 0;
+    border-radius:  140px 0 0 140px ;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 auto;
+    padding: 20px;
+}
+.infodivs > div:nth-child(1){
+    background: lightgray;
+    border: 8px solid white;
+    border-right: none;
 
+
+}
+.infodivs > div:nth-child(2){
+    background: lightgray;
+    width: 80%;
+}
+.infodivs > div > p {
+    text-align: center;
+}
+
+
+.leftify {
+    border-left: none !important;
+    border-right: 8px solid white !important;
+    border-radius: 0 140px 140px 0;
+
+}
+.leftify2 {
+    border-radius: 0 140px 140px 0;
+    margin: 0 auto 0 0;
 
 }
 
 
-@media screen and (min-width: 600px){
+
+@media screen and (min-width: 800px){
   
     .history > div:nth-child(1){
         margin: 0 auto 0 10%;
@@ -147,13 +197,51 @@
     .history > div:nth-child(2){
         margin: 0 10% 0 auto;
     }
-    .staff > div:nth-child(2){
-        top: auto;
+    .staff {
+        flex-direction: row;
+        justify-content: space-around;
     }
+    .staffReverse {
+        flex-direction: row-reverse;
+    }
+    .imgbox {
+        left: auto;
+    }
+    .staff > div:nth-child(2){
+        justify-content: center;
+    }
+    .infobox {
+        top: auto;
+        width: 400px;
+        
+    }
+    .infobox > p:nth-child(1){
+        border-radius: 140px;
+        border-right: 8px solid white;
+
+    }
+    .infodivs > div {
+        border-radius: 140px;
+
+    }
+    .infodivs > div:nth-child(1) {
+        border-right: 8px solid white;
+    }
+    .infodivs > div:nth-child(2){
+        margin: 0 auto;
+    }
+    .leftify{
+        border-left: 8px solid white !important;
+    }
+    
+   
+    
+   
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
+    
     .openContent{
-        height: 400vh;
+        min-height: 350vh;
     }
 }
