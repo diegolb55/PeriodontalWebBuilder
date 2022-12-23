@@ -25,6 +25,10 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                     || widgetControl?.current.services 
                     || fill;
 
+    function enableWindowScroll() {
+        window.onscroll = function() {}; // default is an empty function?
+    }
+
     return (
         <motion.div  className="navbar" 
             variants={variants}
@@ -35,7 +39,11 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
             {
                 isHome ? 
                 
-                    <div className="logo" onClick={()=> closeAllWidgets()}>
+                    <div className="logo" onClick={ () => {
+                        closeAllWidgets();
+                        enableWindowScroll();
+
+                    } }>
 
                     </div>
 
