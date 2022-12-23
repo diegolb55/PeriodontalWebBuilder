@@ -34,7 +34,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
 
             <div className={styles.staff}>
                 <div className={styles.imgbox}>
-                    <div className={styles.imgcircle}>
+                    <div className={`${styles.imgcircle} ${styles.cleft}`}>
                         <Image
                             src="/images/doctor.jpg"
                             alt=""
@@ -61,7 +61,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
             </div>
             <div className={`${styles.staff} ${styles.staffReverse}`}>
                 <div className={`${styles.imgbox} ${styles.imgbox2}`}>
-                    <div className={styles.imgcircle}>
+                    <div className={`${styles.imgcircle} ${styles.cright}`}>
                         <Image
                             src="/images/nurse.jpg"
                             alt=""
@@ -90,7 +90,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
             </div>
             <div className={styles.staff}>
                 <div className={styles.imgbox}>
-                    <div className={styles.imgcircle}>
+                    <div className={`${styles.imgcircle} ${styles.cleft}`}>
                         <Image
                             src="/images/nurse.jpg"
                             alt=""
@@ -183,7 +183,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
 
                     <div className={styles.staff}>
                         <div className={styles.imgbox}>
-                            <div className={styles.imgcircle}>
+                            <div className={`${styles.imgcircle} ${styles.cleft}`}>
                                 <Image
                                     src="/images/doctor.jpg"
                                     alt=""
@@ -210,7 +210,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                     </div>
                     <div className={`${styles.staff} ${styles.staffReverse}`}>
                         <div className={`${styles.imgbox} ${styles.imgbox2}`}>
-                            <div className={styles.imgcircle}>
+                            <div className={`${styles.imgcircle} ${styles.cright}`}>
                                 <Image
                                     src="/images/nurse.jpg"
                                     alt=""
@@ -239,7 +239,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                     </div>
                     <div className={styles.staff}>
                         <div className={styles.imgbox}>
-                            <div className={styles.imgcircle}>
+                            <div className={`${styles.imgcircle} ${styles.cleft}`}>
                                 <Image
                                     src="/images/nurse.jpg"
                                     alt=""

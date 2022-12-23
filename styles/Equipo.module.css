@@ -30,9 +30,9 @@
 
 .openContent {
     /* border: 5px solid red; */
-
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
 }
 .history{
@@ -110,21 +110,22 @@
     justify-content: flex-end;
 }
 .imgcircle {
-    background: red;
     height: 350px;
     width: 350px;
     border-radius: 100%;
 
     position: relative;
-    /* left: -50px; */
     box-shadow: 0 0 15px 0 #72C491;
     overflow: hidden;
 }
+.cleft {
+    left: -50px;
+}
+.cright {
+    right: -50px;
+}
 
-/* .staff > div:nth-child(2){
-    background: lightcoral;
-    
-} */
+
 .infobox {
     /* border: 2px solid blue; */
     position: relative;
@@ -209,6 +210,12 @@
     .imgbox {
         left: auto;
     }
+    .cleft {
+        left: auto;
+    }
+    .cright {
+        right: auto;
+    }
     .staff > div:nth-child(2){
         justify-content: center;
     }
@@ -246,4 +253,5 @@
     .openContent{
         min-height: 350vh;
     }
+    
 }
