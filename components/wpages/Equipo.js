@@ -35,7 +35,13 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
             <div className={styles.staff}>
                 <div className={styles.imgbox}>
                     <div className={styles.imgcircle}>
+                        <Image
+                            src="/images/doctor.jpg"
+                            alt=""
+                            layout="fill"
+                            objectFit='cover'
 
+                        />
                     </div>
                 </div>
                 <div>
@@ -56,7 +62,13 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
             <div className={`${styles.staff} ${styles.staffReverse}`}>
                 <div className={`${styles.imgbox} ${styles.imgbox2}`}>
                     <div className={styles.imgcircle}>
+                        <Image
+                            src="/images/nurse.jpg"
+                            alt=""
+                            layout="fill"
+                            objectFit='cover'
 
+                        />
                     </div>
                 </div>
                 <div>
@@ -79,7 +91,13 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
             <div className={styles.staff}>
                 <div className={styles.imgbox}>
                     <div className={styles.imgcircle}>
+                        <Image
+                            src="/images/nurse.jpg"
+                            alt=""
+                            layout="fill"
+                            objectFit='cover'
 
+                        />
                     </div>
                 </div>
                 <div>
@@ -140,6 +158,9 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
            
             <OpenContent isOpen={widgetControl?.current.equipo} >
                 <div className={styles.openContent}>
+
+                    {/*---------HISTORY-----------*/}
+
                     <div className={styles.history}>
                         <div>
                             <Image
@@ -158,12 +179,18 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                         </div>
                     </div>
 
+                    {/*---------STAFF-----------*/}
 
-            
                     <div className={styles.staff}>
                         <div className={styles.imgbox}>
                             <div className={styles.imgcircle}>
+                                <Image
+                                    src="/images/doctor.jpg"
+                                    alt=""
+                                    layout="fill"
+                                    objectFit='cover'
 
+                                />
                             </div>
                         </div>
                         <div>
@@ -184,7 +211,13 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                     <div className={`${styles.staff} ${styles.staffReverse}`}>
                         <div className={`${styles.imgbox} ${styles.imgbox2}`}>
                             <div className={styles.imgcircle}>
+                                <Image
+                                    src="/images/nurse.jpg"
+                                    alt=""
+                                    layout="fill"
+                                    objectFit='cover'
 
+                                />
                             </div>
                         </div>
                         <div>
@@ -207,7 +240,13 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                     <div className={styles.staff}>
                         <div className={styles.imgbox}>
                             <div className={styles.imgcircle}>
+                                <Image
+                                    src="/images/nurse.jpg"
+                                    alt=""
+                                    layout="fill"
+                                    objectFit='cover'
 
+                                />
                             </div>
                         </div>
                         <div>
@@ -225,10 +264,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                             
                         </div>
                     </div>
-            
-
-        
-        </div> 
+                </div>  
             </OpenContent>
               
             

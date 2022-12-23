@@ -103,6 +103,7 @@
     /* background: lightgray; */
     display: flex;
     justify-content: flex-start;
+
     
 }
 .imgbox2 {
@@ -117,6 +118,7 @@
     position: relative;
     /* left: -50px; */
     box-shadow: 0 0 15px 0 #72C491;
+    overflow: hidden;
 }
 
 /* .staff > div:nth-child(2){

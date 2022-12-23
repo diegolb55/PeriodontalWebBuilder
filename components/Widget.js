@@ -71,6 +71,18 @@ export default function Widget(props){
         }
     }
 
+    function disableWindowScroll() {
+        // Get the current window scroll position
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+       
+        // if any scroll is attempted,
+        // set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(0, scrollTop);
+        }
+    };
+  
+
 
     return (
         <div >
@@ -90,7 +102,10 @@ export default function Widget(props){
                         boxShadow: wopen ? "none" : " 2px -2px 15px 2px rgba(114,196,145,0.75)",
 
                     }}
-                    onClick={ setIsOpen }   
+                    onClick={ () => {
+                        setIsOpen();
+                        disableWindowScroll()
+                    } }   
                 >
 
 
