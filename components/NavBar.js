@@ -91,7 +91,7 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                 </motion.div>
 
                 
-                <Link href="#" className="link">
+                <Link href="./CitaPage" className="link">
                     <p>Citas</p>
                 </Link>
                 <Link href="./HorarioPage" className="link">
