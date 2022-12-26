@@ -36,6 +36,7 @@
 
 }
 .history{
+    /* border: 2px solid red; */
     flex-grow: 1;
 
    display: flex;
@@ -85,6 +86,12 @@
 }
 .history > div:nth-child(2) > p {
     padding: 20px 0;
+}
+.history > p:nth-child(3){
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px; 
 }
 
 

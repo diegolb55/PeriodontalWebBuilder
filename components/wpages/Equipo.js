@@ -28,6 +28,7 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                         Oficina ofreciendo tratamientos a pacientes con enfermedades periodontales e implantologia oral desde el año 2000.
                     </p>
                 </div>
+                <p>Conoce el Equipo</p>
             </div>
 
 
