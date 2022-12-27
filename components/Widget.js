@@ -106,9 +106,7 @@ export default function Widget(props){
                     } }   
                 >
 
-
                     { children }
-
 
                 </motion.div>
             </motion.div>   
