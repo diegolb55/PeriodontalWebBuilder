@@ -70,18 +70,16 @@ export default function Widget(props){
 
         }
     }
-
+    
     function disableWindowScroll() {
-        // Get the current window scroll position
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
        
-        // if any scroll is attempted,
-        // set this to the previous value
+        
         window.onscroll = function() {
             window.scrollTo(0, scrollTop);
         }
-    };
-  
+       
+    }
 
 
     return (
@@ -108,9 +106,7 @@ export default function Widget(props){
                     } }   
                 >
 
-
                     { children }
-
 
                 </motion.div>
             </motion.div>   
