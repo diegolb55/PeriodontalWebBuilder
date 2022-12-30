@@ -26,11 +26,16 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                     || widgetControl?.current.services 
                     || fill;
 
-    function enableWindowScroll() {
+    function enableDocumentScroll() {
        
-        if (typeof window !== 'undefined') {
-            window.onscroll = function() {}; 
-          }
+        // if (typeof window !== 'undefined') {
+        //     window.onscroll = function() {}; 
+        // }
+
+        if(typeof document !== 'undefined'){
+            document.body.style.overflow = "scroll"
+
+        }
     }
 
     return (
@@ -46,10 +51,10 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                     <div className="logo" 
                         
                         onClick={ () => {
-                        closeAllWidgets();
-                        enableWindowScroll();
-
-                    } }>
+                            closeAllWidgets();
+                            enableDocumentScroll();
+                        }}
+                   >
                         <Image
                             src="/images/logo.png"
                             alt=""
@@ -94,22 +99,22 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
 
                 
                 <Link href="./CitaPage" className="link">
-                    <p onClick={ enableWindowScroll() }>Citas</p>
+                    <p onClick={ () => enableDocumentScroll() }>Citas</p>
                 </Link>
                 <Link href="./HorarioPage" className="link">
-                    <p onClick={ enableWindowScroll() }>Horario</p>
+                    <p onClick={ () => enableDocumentScroll() }>Horario</p>
                 </Link>
                 <Link href="./EquipoPage" className="link">
-                    <p onClick={ enableWindowScroll() }>Equipo</p>
+                    <p onClick={ () => enableDocumentScroll() }>Equipo</p>
                 </Link>
                 <Link href="./TratamientosPage" className="link">
-                    <p onClick={ enableWindowScroll() }>Tratamientos</p>
+                    <p onClick={ () => enableDocumentScroll() }>Tratamientos</p>
                 </Link> 
                 <Link href="./LocationPage" className="link">
-                    <p onClick={ enableWindowScroll() }>Localizacion</p>
+                    <p onClick={ () => enableDocumentScroll() }>Localizacion</p>
                 </Link>
                 <Link href="./MetodosDePagoPage" className="link">
-                    <p onClick={ enableWindowScroll() }>Metodos de Pago</p>
+                    <p onClick={ () => enableDocumentScroll() }>Metodos de Pago</p>
                 </Link>                   
                
 
