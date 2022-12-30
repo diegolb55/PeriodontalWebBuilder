@@ -2,7 +2,6 @@ import styles from "../styles/Widget.module.css"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
 
-
 export default function Widget(props){
     
 
@@ -71,12 +70,18 @@ export default function Widget(props){
         }
     }
     
-    function disableWindowScroll() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-       
-        
-        window.onscroll = function() {
-            window.scrollTo(0, scrollTop);
+    function disableDocumentScroll() {
+        // if (typeof window !== 'undefined'){
+        //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        //     console.log(scrollTop)
+            
+        //     window.onscroll = function() {
+        //         window.scrollTo(0, scrollTop);
+        //     }
+        // }
+        if(typeof document !== 'undefined'){
+            document.body.style.overflow = "hidden"
+
         }
        
     }
@@ -101,8 +106,9 @@ export default function Widget(props){
 
                     }}
                     onClick={ () => {
+                        disableDocumentScroll()
+                        // disableScroll();
                         setIsOpen();
-                        disableWindowScroll()
                     } }   
                 >
 
