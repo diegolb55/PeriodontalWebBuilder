@@ -3,6 +3,8 @@ import Widgets from "./Widgets"
 import NavBar from "./NavBar";
 import { useState, useRef } from "react";
 import Implant from "../components/Implant";
+import { RxDoubleArrowDown } from "react-icons/rx"
+import { motion } from "framer-motion"
 
 
 export default function LandingWrapper() {
@@ -70,6 +72,17 @@ export default function LandingWrapper() {
         forceRender(Date.now());
     }
 
+    // variants
+    const lightvariants = {
+        light1: {
+            boxShadow: ["2px -2px 15px 2px rgba(133,164,220,0.8)", "2px -2px 15px 2px rgba(207, 220, 133, 0.8)"],
+            transition: {
+                yoyo: Infinity,
+                duration: 5
+            } 
+        }
+    }
+
     return (
         <div className={styles.wrapper}>
 
@@ -114,13 +127,29 @@ export default function LandingWrapper() {
                 </div>
                 <div className={styles.b4}>
                     <div className={styles.c1}>
-                        <div className={styles.c1a}></div>
+                        <motion.div 
+                            className={styles.lightbox1}
+                            animate={"light1"}
+                            variants={lightvariants}
+                            
+                        ></motion.div>
                     </div>
                     <div className={styles.b4r}>
-                        <div className={styles.b4rc}></div>
+                        <motion.div className={styles.b4rc}
+                            animate={"light1"}
+                            variants={lightvariants}
+                        ></motion.div>
                         <div className={styles.b4rc1}>
-                            <div className={styles.b4rc1a}></div>
+                            <motion.div className={styles.b4rc1a}
+                                animate={"light1"}
+                                variants={lightvariants}
+                            ></motion.div>
                         </div>
+                    </div>
+                    <div className={styles.explore}>
+                        <RxDoubleArrowDown/>
+                        <p>explore all widgets</p>
+                        <RxDoubleArrowDown/>
                     </div>
                 </div>
             </div>

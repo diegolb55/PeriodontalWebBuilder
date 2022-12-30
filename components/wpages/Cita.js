@@ -1,5 +1,4 @@
 import styles from "../../styles/Cita.module.css"
-import { useState } from "react"
 import Widget from "../Widget"
 
 import ClosedContent from "./components/ClosedContent"
@@ -90,7 +89,6 @@ export default function Cita({noWidget, widgetControl, openWidget}){
                     <div className={styles.citaIcon}>
                         <BsTelephonePlusFill />
                     </div>
-
                 </div>    
             </ClosedContent>
            

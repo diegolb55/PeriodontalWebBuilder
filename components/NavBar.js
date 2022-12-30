@@ -3,6 +3,7 @@ import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 
 
@@ -26,7 +27,10 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                     || fill;
 
     function enableWindowScroll() {
-        window.onscroll = function() {}; // default is an empty function?
+       
+        if (typeof window !== 'undefined') {
+            window.onscroll = function() {}; 
+          }
     }
 
     return (
@@ -39,20 +43,43 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
             {
                 isHome ? 
                 
-                    <div className="logo" onClick={ () => {
+                    <div className="logo" 
+                        
+                        onClick={ () => {
                         closeAllWidgets();
                         enableWindowScroll();
 
                     } }>
+                        <Image
+                            src="/images/logo.png"
+                            alt=""
+                            fill
 
+                        />
                     </div>
 
                 :
                 <Link href={"./"}>
-                    <div className="logo">
-
+                    <div className="logo" >
+                        <Image
+                            src="/images/logo.png"
+                            alt=""
+                            fill
+                        />
                     </div>
                 </Link>
+            }
+
+            {/* menu icon */}
+           
+            { open ? 
+                <AiOutlineMenuUnfold className="burger"
+                    onClick={() => setOpen(false)}
+                />
+                :
+                <AiOutlineMenuFold className="burger"
+                    onClick={() => setOpen(true)}
+                />
             }
 
             {/* link box */}
@@ -63,51 +90,26 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                 transition={{type:"tween"}}
 
             >
-                {/* menu icon */}
-                <motion.div 
-                    animate={{
-                        // border: "2px solid black",
-                        display:"flex",
-                        justifyContent:"center",
-                        alignItems:'center',
-                        position:"absolute",
-                        height: "10vh",
-                        top: 0,
-                        left: open ? 20 : -60,
-                    }}
-                    transition={{type:"tween"}}
-                >
-                    { open ? 
-                        <AiOutlineMenuUnfold className="burger"
-                            onClick={() => setOpen(false)}
-                        
-                        />
-                        :
-                        <AiOutlineMenuFold className="burger"
-                            onClick={() => setOpen(true)}
-                            
-                        />
-                    }
-                </motion.div>
+                
 
                 
                 <Link href="./CitaPage" className="link">
-                    <p>Citas</p>
+                    <p onClick={ enableWindowScroll() }>Citas</p>
                 </Link>
                 <Link href="./HorarioPage" className="link">
-                    <p>Horario</p>
+                    <p onClick={ enableWindowScroll() }>Horario</p>
                 </Link>
                 <Link href="./EquipoPage" className="link">
-                    <p>Equipo</p>
+                    <p onClick={ enableWindowScroll() }>Equipo</p>
                 </Link>
                 <Link href="./TratamientosPage" className="link">
-                    <p>Tratamientos</p>
+                    <p onClick={ enableWindowScroll() }>Tratamientos</p>
                 </Link> 
                 <Link href="./LocationPage" className="link">
-                    <p>Localizacion</p>
+                    <p onClick={ enableWindowScroll() }>Localizacion</p>
                 </Link>
                 <Link href="./MetodosDePagoPage" className="link">
-                    <p>Metodos de Pago</p>
+                    <p onClick={ enableWindowScroll() }>Metodos de Pago</p>
                 </Link>                   
                
 

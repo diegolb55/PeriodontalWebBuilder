@@ -3,18 +3,15 @@
   position: relative;
   overflow: hidden !important;
 
-  height: 250vh;
-  
-  min-width: 300px;
+
 
 }
 
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
   .container{
-    /* border-color: blue; */
     height: 300vh;
   }
-}
+} */
 
 
 

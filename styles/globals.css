@@ -22,23 +22,30 @@ a {
 
 /* Nav Bar */
 .navbar {
-  /* border: 2px solid white; */
-  padding-left: 20px;
-  height: 10vh;
+  /* border: 2px solid red; */
+  height: 100px;
   width: 100%;
+
   position: fixed;
   z-index: 12;
   top: 0;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .logo { 
-  border: 2px solid gray;
   background: white;
   height: 50px;
   width: 50px;
   border-radius: 100%;
+  margin-left: 37px;
+
+  position: relative;
+  box-shadow: 0 0 0 5px white,
+      0 0 0 7px gray;
+
+ 
 }
 .links {
     position: absolute;
@@ -56,13 +63,18 @@ a {
   font-size: 1.3rem;
 
 }
+
 .burger {
+  /* border: 2px solid black; */
   color: gray;
   font-size: 2rem;
   display: block;
-}
+  margin-right: 30px;
 
-@media screen and (min-width: 600px){
+  position: relative;
+  z-index: 2;}
+
+@media screen and (min-width: 1000px){
  
   .links {
     
@@ -85,7 +97,7 @@ a {
     display: none;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .links {
     width: 70%;
     background: #FFFFFF;
