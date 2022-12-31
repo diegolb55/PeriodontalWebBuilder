@@ -12,16 +12,11 @@ import MetodosDePago from "../components/wpages/MetodosDePago";
 
 export default function Widgets({ widgetControl, openWidget }){
 
-    
-
-
-
 
     return (
         <div className={styles.absolutewrapper}>
 
            
-            <div className={styles.filling}></div>
 
             {/* section1 */}
             

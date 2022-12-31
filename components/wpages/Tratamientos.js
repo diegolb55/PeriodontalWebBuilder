@@ -1,5 +1,6 @@
 import styles from "../../styles/Tratamientos.module.css"
 import { useState } from "react"
+import Image from "next/image"
 import Widget from "../Widget"
 
 import ClosedContent from "./components/ClosedContent"
@@ -12,7 +13,28 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
         return (
             <div className={styles.treatmentbox} >
                 <p>Gummy Smile</p>
-                <div></div>
+                <div className={styles.imgbox}>
+                    <div>
+                        <p>before</p>
+                        <div>
+                            <Image
+                                src="/images/logo.png"
+                                alt=""
+                                fill
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <p>after</p>
+                        <div>
+                            <Image
+                                src="/images/logo.png"
+                                alt=""
+                                fill
+                            />
+                        </div>
+                    </div>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam reprehenderit modi ea tenetur repudiandae nulla, necessitatibus recusandae ipsam. Rem iure dolorum cum magnam perspiciatis! Aperiam adipisci debitis possimus sint?
                 </p>

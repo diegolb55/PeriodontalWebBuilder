@@ -4,6 +4,8 @@ import NavBar from "./NavBar";
 import { useState, useRef } from "react";
 import Implant from "../components/Implant";
 import { RxDoubleArrowDown } from "react-icons/rx"
+import {BsTelephonePlusFill} from "react-icons/bs"
+
 import { motion } from "framer-motion"
 
 
@@ -109,13 +111,12 @@ export default function LandingWrapper() {
                 <div style={{
                         // border: "2px solid red",
                     
-                        height: "100%",
+                        height: "80%",
                         width: "100%",
                         maxWidth:700,
 
                         position:"absolute",
-                        bttom: 0,
-                        right: 0,
+                        bottom: "20%",
                         zIndex: 10,
                     }}>
                     <Implant />
@@ -123,7 +124,7 @@ export default function LandingWrapper() {
 
                 <div className={styles.b3}>
                     <p>Contactanos para<br/> citas y preguntas</p>
-                    <button>llamar</button>
+                    <button>llamar <BsTelephonePlusFill className={styles.llamarIcon}/></button>
                 </div>
                 <div className={styles.b4}>
                     <div className={styles.c1}>

@@ -32,11 +32,12 @@
 
 .openContent {
     /* border: 5px solid red; */
-    height: 220vh;
+    min-height: 100%;
 
 
     overflow: hidden;
     position: relative;
+    padding-bottom: 100px;
 }
 .citaWrapper {
     /* border: 5px solid gold; */

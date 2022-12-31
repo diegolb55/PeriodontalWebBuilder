@@ -44,8 +44,8 @@ OPEN WIDGET STYLING
     /* border: 5px solid red; */
     /* background: rgb(217,217,217); */
 
-    height: 120%;
-    width: 100%;
+    min-height: 120%;
+    /* width: 100vw; */
 
     display: flex;
     flex-direction: column;
@@ -54,6 +54,7 @@ OPEN WIDGET STYLING
    
 }
 .boxgradient {
+    /* border: 2px solid gold; */
     background: gray;
     height: 100%;
     width: 100%;
@@ -71,38 +72,41 @@ OPEN WIDGET STYLING
     position:relative;
 }
 .schedulebox {
-    /* border: 2px solid gray; */
+    /* border: 2px solid red; */
 
-   
     flex-grow: .6;
+    z-index: 20;
+    padding: 20px 0;
    
-
     display: flex;
     flex-direction: column;
-
-    
+    justify-content: center;
 
 }
 .schedulebox > p {
     /* border: 2px solid gray; */
     position: relative;
+    top: -50px;
+    z-index: 1;
+
     font-weight: bolder;
     font-size: 1.5rem;
-    padding: 10px 0;
+
+    padding: 10px;
     width: 80%;
     margin: 0 auto;
 }
 .schedule {
-    /* border: 2px solid gray; */
+    /* border: 2px solid black; */
     background: white;
 
-    flex-grow: .6;
+    flex-grow: .5;
+    min-height: 300px;
+
     width: 80%;
     margin: 0 auto;
     
-
     position: relative;
-    top: 50px;
     box-shadow: 2px 2px 15px 0px rgba(67,84,87,0.42);
 
     display: flex;
@@ -143,6 +147,7 @@ OPEN WIDGET STYLING
     align-items: center;
 }
 .scheduleRow > p {
+
     font-size: .8rem;
 }
 
@@ -150,12 +155,14 @@ OPEN WIDGET STYLING
   
     .openContent {
         flex-direction: row-reverse;
-        border-color: blue;
     }
     .boxgradient {
         background: rgb(217,217,217);
         background: linear-gradient(90deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 43%, rgba(217,217,217,1) 54%, rgba(217,217,217,1) 65%, rgba(217,217,217,0.06796221906731448) 85%);
     
+    }
+    .schedulebox {
+        padding: 150px 0;
     }
     
 }
