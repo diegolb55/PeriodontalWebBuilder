@@ -20,12 +20,13 @@ export default function Horario({noWidget, widgetControl, openWidget}){
 
     if (noWidget) {
         return (
-            <div className={styles.openContent} style={{minHeight:"120%"}}>
+            <div className={styles.openContent} style={{minHeight:"120vh"}}>
                     <div className={styles.imgbox}>
                         <Image
-                            src="/images/horario.jpg"
+                            src={ schedule.isOpen() ? "/images/horario.jpg" :  "/images/horariodark.jpg"}
                             alt=""
                             fill
+                            style={{objectFit:"cover"}}
 
                         />
                     </div>
@@ -33,8 +34,8 @@ export default function Horario({noWidget, widgetControl, openWidget}){
 
                     <div className={styles.schedulebox}>
                         <p>Horas de Oficina</p>
-                        <div className={styles.schedule}>
-                            <div className={styles.toprect}></div>
+                        <div className={styles.schedule} style={ schedule.isOpen() ? {} : {background: "#9A9A9A"}}>
+                            <div style={ schedule.isOpen() ? {} : {background: "#9A9A9A"}} className={styles.toprect} ></div>
                             <p className={styles.siderect}>
                                 { schedule?.isOpen() ? "abierto" : "cerrado"}
                             </p>

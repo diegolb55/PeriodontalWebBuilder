@@ -17,8 +17,8 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
                     <Image
                         src="/images/dentalg.jpg"
                         alt=""
-                        layout="fill"
-                        objectFit='cover'
+                        fill
+                        style={{objectFit:"cover"}}
 
                     />
                 </div>
