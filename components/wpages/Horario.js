@@ -20,13 +20,12 @@ export default function Horario({noWidget, widgetControl, openWidget}){
 
     if (noWidget) {
         return (
-            <div className={styles.openContent} style={{height:"120vh"}}>
+            <div className={styles.openContent} style={{minHeight:"120%"}}>
                     <div className={styles.imgbox}>
                         <Image
                             src="/images/horario.jpg"
                             alt=""
-                            layout="fill"
-                            objectFit='cover'
+                            fill
 
                         />
                     </div>

@@ -46,10 +46,12 @@
 
 
 .openContent {
+    /* border: 5px solid red; */
     background: white;
     width: 100%;
     padding-top: 100px;
     color: #435457;
+    padding-bottom: 100px;
 
 
 }
@@ -88,7 +90,7 @@
     margin: 20px;
     width: 80%;
     max-width: 400px;
-    height: 400px;
+    min-height: 400px;
 
     display: flex;
     flex-direction: column;
@@ -99,10 +101,32 @@
     padding: 20px;
     text-align: center;
 }
-.treatmentbox > div {
+.imgbox {
     background: #F3F3F3;
     flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.imgbox > div {
+    /* border: 2px solid blue; */
+    flex-grow: .5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imgbox > div > div {
+    
+    height: 150px;
+    width: 150px;
+    position: relative;
+}
+
 .treatmentbox > p:nth-child(3) {
     color: white;
     background: #9A9A9A;
