@@ -42,7 +42,6 @@ OPEN WIDGET STYLING
 **/
 .openContent {
     /* border: 5px solid red; */
-    /* background: rgb(217,217,217); */
 
     min-height: 120%;
     /* width: 100vw; */
@@ -50,7 +49,6 @@ OPEN WIDGET STYLING
     display: flex;
     flex-direction: column;
     position: relative;
-
    
 }
 .boxgradient {
@@ -75,8 +73,7 @@ OPEN WIDGET STYLING
     /* border: 2px solid red; */
 
     flex-grow: .6;
-    z-index: 20;
-    padding: 20px 0;
+    /* padding: 20px 0 2; */
    
     display: flex;
     flex-direction: column;
