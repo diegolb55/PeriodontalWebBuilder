@@ -14,32 +14,38 @@ export default function Location({noWidget, widgetControl, openWidget}){
 
         return (
             <div className={styles.openContent}>
-            <div className={styles.mapbox}>
-                <p>Trabajamos dos localizaciones distintas</p>
-            </div>
-            <div className={styles.infobox}>
-
-                <div className={styles.box}>
-                    <div>
-                        <p>Ponce</p>
-                    </div>
-                    <div className={styles.boxRow}>
-                        <p>Llamar</p>
-                        <p>787-777-7777</p>
-                        <button>call</button>
-                    </div>
-                    <div className={styles.boxRow}>
-                        <p>Mapa</p>
-                        <p>calle...</p>
-                        <button>call</button>
-                    </div>
-                    <div className={styles.boxRow}>
-                        <p>Horario</p>
-                        <p>-- </p>
-                        <button>call</button>
+                <div className={styles.toprect}></div>
+                <div className={styles.mapbox}>
+                    <p>Trabajamos dos localizaciones distintas</p>
+                    <div className={styles.maps}>
+                        <div className={styles.map}>
+                            <p>Manati</p>
+                            <div>
+                                <Image src="/images/manati.png"
+                                    fill
+                                    style={{objectFit:"cover"}}
+                                />
+                            </div>
+                        </div>
+                        <div className={styles.map}>
+                            <p>Ponce</p>
+                            <div>
+                                <Image src="/images/manati.png"
+                                    fill
+                                    style={{objectFit:"cover"}}
+                                />                            
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div className={styles.infobox}>
+                    <p>Para citas y preguntas, no dude en llamar</p>
+                    <div>
+                        <button>llamar</button>
+                        <p>787-777-7777</p>
+                    </div>
+                   
+                </div>
         </div>  
         )
 
@@ -78,33 +84,39 @@ export default function Location({noWidget, widgetControl, openWidget}){
            
             <OpenContent isOpen={widgetControl?.current.location} >
                 <div className={styles.openContent}>
+                    <div className={styles.toprect}></div>
                     <div className={styles.mapbox}>
                         <p>Trabajamos dos localizaciones distintas</p>
-                    </div>
-                    <div className={styles.infobox}>
-
-                        <div className={styles.box}>
-                            <div>
+                        <div className={styles.maps}>
+                            <div className={styles.map}>
+                                <p>Manati</p>
+                                <div>
+                                    <Image src="/images/manati.png"
+                                        fill
+                                        style={{objectFit:"cover"}}
+                                    />
+                                </div>
+                            </div>
+                            <div className={styles.map}>
                                 <p>Ponce</p>
-                            </div>
-                            <div className={styles.boxRow}>
-                                <p>Llamar</p>
-                                <p>787-777-7777</p>
-                                <button>call</button>
-                            </div>
-                            <div className={styles.boxRow}>
-                                <p>Mapa</p>
-                                <p>calle...</p>
-                                <button>call</button>
-                            </div>
-                            <div className={styles.boxRow}>
-                                <p>Horario</p>
-                                <p>-- </p>
-                                <button>call</button>
+                                <div>
+                                    <Image src="/images/manati.png"
+                                        fill
+                                        style={{objectFit:"cover"}}
+                                    />                            
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>  
+                    <div className={styles.infobox}>
+                        <p>Para citas y preguntas, no dude en llamar.</p>
+                        <div>
+                            <button>llamar</button>
+                            <p>787-777-7777</p>
+                        </div>
+                    
+                    </div>
+                </div> 
             </OpenContent>
               
             
