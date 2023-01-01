@@ -67,7 +67,7 @@ export default function Widget(props){
              * 
             */
             
-            height: fixed ? "fill-available" : height,
+            height: fixed ? getOuterHeight() : height,
             // minHeight: fixed ? "-webkit-fill-available" : height,
             width:  fixed ? "100vw" : width,
             position: fixed ? "fixed" : "relative",
