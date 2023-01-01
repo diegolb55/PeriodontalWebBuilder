@@ -1,7 +1,7 @@
 
 .closedContent {
     height: 100%;
-    padding: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -10,18 +10,21 @@
 }
 .circles{
     /* border: 2px solid red; */
-    padding: 10px;
+    padding: 5px;
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 .circles > div {
-    background: gray;
     height: 30px;
     width: 30px;
     border-radius: 100%;
     margin: 5px;
+    position: relative;
+}
+.circles > div:nth-child(4) {
+    border: 2px solid gray;
 }
 
 
@@ -29,6 +32,7 @@
     /* border: 2px solid red; */
     height: 130%;
     background: white;
+    padding-bottom: 50px;
 
     position: relative;
 
@@ -83,12 +87,16 @@
     border: 2px solid red;
 
 } */
-.pagos > div:nth-child(3) > div > div {
-    background: gray;
+.opencircle{
     height: 70px;
     width: 70px;
     border-radius: 100%;
     margin: 0 auto;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -130,7 +138,8 @@
 
 }
 .planes > div:nth-child(3) > div {
-    background: gray;
+    border: 2px solid gray;
+    background: white;
     height: 70px;
     width: 70px;
     border-radius: 100%;

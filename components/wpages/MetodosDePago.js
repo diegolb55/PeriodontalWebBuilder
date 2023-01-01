@@ -4,6 +4,7 @@ import Widget from "../Widget"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
+import Image from "next/image"
 
 export default function MetodosDePago({noWidget, widgetControl, openWidget}){
 
@@ -73,12 +74,28 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
 
             <ClosedContent isOpen={widgetControl?.current.metodosDePago} >
                 <div className={styles.closedContent}>
-                    <p>métodos de pago y planes medicos:</p>
+                    <p>métodos de pago y plan médico:</p>
                     <div className={styles.circles}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div>
+                            <Image src="/images/athmovil.png"
+                                fill
+                            />
+                        </div>
+                        <div>
+                            <Image src="/images/cash.png"
+                                fill
+                            />
+                        </div>
+                        <div>
+                            <Image src="/images/cheque.png"
+                                fill
+                            />
+                        </div>
+                        <div>
+                            <Image src="/images/triples.png"
+                                fill
+                            />
+                        </div>
 
                     </div>
                 </div>    
@@ -94,27 +111,43 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                             <div></div>
                             <div>
                                 <div>
-                                    <div></div>
-                                    <p>ath business</p>
+                                    <div className={styles.opencircle}>
+                                        <Image src="/images/athmovil.png"
+                                            fill
+                                        />
+                                    </div>
+                                    <p>ath movil</p>
                                 </div>
                                 <div>
-                                    <div></div>
+                                    <div  className={styles.opencircle}>
+                                        <Image src="/images/cash.png"
+                                            fill
+                                        />
+                                    </div>
                                     <p>efectivo</p>
                                 </div>
                                 <div>
-                                    <div></div>
+                                    <div  className={styles.opencircle}>
+                                        <Image src="/images/cheque.png"
+                                            fill
+                                        />
+                                    </div>
                                     <p>cheque</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div className={styles.planes}>
-                            <div>
+                            <div  >
                                 <h4>Plan Medico</h4>
                             </div>
                             <div></div>
                             <div>
-                                <div></div>
+                                <div  className={styles.opencircle}>
+                                    <Image src="/images/triples.png"
+                                        fill
+                                    />
+                                </div>
                                 <p>triple S</p>
                             </div>
                         </div>

@@ -11,20 +11,9 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
 
     const [open, setOpen] = useState(false);
 
-    const variants = {
-        color:{
-            background: "rgb(217, 217, 217)",
-            boxShadow:"0px -2px 15px 0px rgba(114,196,145,0.75) inset"
-        },
-        nocolor:{
-            background: "rgba(217, 217, 217, 0)",
-            boxShadow:"none",
-        }
-    }
+    
 
-    let background =  widgetControl?.current.location 
-                    || widgetControl?.current.services 
-                    || fill;
+   
 
     function enableDocumentScroll() {
        
@@ -39,12 +28,7 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
     }
 
     return (
-        <motion.div  className="navbar" 
-            variants={variants}
-            animate={background ? "color" : "nocolor"}
-            transition={{duration: 1.5}}
-            >
-
+        <div  className="navbar">
             {
                 isHome ? 
                 
@@ -97,7 +81,9 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
             >
                 
 
-                
+                <Link href="./" className="link">
+                    <p onClick={ () => enableDocumentScroll() }>Home</p>
+                </Link>
                 <Link href="./CitaPage" className="link">
                     <p onClick={ () => enableDocumentScroll() }>Citas</p>
                 </Link>
@@ -124,6 +110,6 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
            
 
 
-        </motion.div>
+        </div>
     )
 }
