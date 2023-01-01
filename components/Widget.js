@@ -38,7 +38,9 @@ export default function Widget(props){
              * 
             */
             
-            height: fixed ? "100vh":height,
+            height: fixed ? "100vh" : height,
+            minHeight: fixed ? "-webkit-fill-available" : height,
+
             width: fixed ? "100vw":width,
             scale: fixed ? 1 : 25,
             position: fixed ? "fixed" : "relative",
@@ -59,6 +61,7 @@ export default function Widget(props){
             */
             
             height: fixed ? "100vh" : height,
+            minHeight: fixed ? "-webkit-fill-available" : height,
             width:  fixed ? "100vw" : width,
             position: fixed ? "fixed" : "relative",
             scale:  fixed ? 25 : 1,
