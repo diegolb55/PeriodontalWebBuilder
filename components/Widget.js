@@ -27,6 +27,13 @@ export default function Widget(props){
         }, 1200);
     }, [isOpen]);
 
+    const getOuterHeight = () => {
+        if(typeof window !== 'undefined'){
+            return window.outerHeight;
+        }
+        return "100vh";
+    }
+
     
     let cvariants = {
         open:{
@@ -38,8 +45,8 @@ export default function Widget(props){
              * 
             */
             
-            height: fixed ? "100vh" : height,
-            minHeight: fixed ? "-webkit-fill-available" : height,
+            height: fixed ? getOuterHeight() : height,
+            // minHeight: fixed ? "-webkit-fill-available" : height,
 
             width: fixed ? "100vw":width,
             scale: fixed ? 1 : 25,
@@ -60,8 +67,8 @@ export default function Widget(props){
              * 
             */
             
-            height: fixed ? "100vh" : height,
-            minHeight: fixed ? "-webkit-fill-available" : height,
+            height: fixed ? "fill-available" : height,
+            // minHeight: fixed ? "-webkit-fill-available" : height,
             width:  fixed ? "100vw" : width,
             position: fixed ? "fixed" : "relative",
             scale:  fixed ? 25 : 1,
