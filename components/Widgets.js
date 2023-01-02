@@ -45,12 +45,12 @@ export default function Widgets({ widgetControl, openWidget }){
             <div className={styles.section2}>
 
                 <div style={{}}>
-                <Equipo widgetControl={widgetControl} openWidget={openWidget}/>
+                {/* <Equipo widgetControl={widgetControl} openWidget={openWidget}/> */}
                 </div>
 
                 <div styke={{}}>
-                <Cita widgetControl={widgetControl} openWidget={openWidget}/>
-                <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/>
+                {/* <Cita widgetControl={widgetControl} openWidget={openWidget}/> */}
+                {/* <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/> */}
                 </div>
 
             </div>

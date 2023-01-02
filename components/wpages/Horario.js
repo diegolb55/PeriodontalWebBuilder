@@ -74,7 +74,7 @@ export default function Horario({noWidget, widgetControl, openWidget}){
             }}
             
             height={120}
-            width={120}
+            width={"30vw"}
             background={["#ffffff", "#d9d9d9"]}
         >
 
