@@ -12,6 +12,7 @@
 
     /* height: 100%;
     width: 100%; */
+
    
 }
 .widgetCover::-webkit-scrollbar {
@@ -20,9 +21,15 @@
 
 
 .widget {
+    /* border: 5px solid black; */
+
     height: 100%;
     width: 100%;
-    /* border: 2px solid black; */
+    top: 0
+}
+
+.widget::-webkit-scrollbar {
+    display: none;
 }
 
 

@@ -42,7 +42,7 @@ OPEN WIDGET STYLING
 **/
 .openContent {
     border: 5px solid red;
-    min-height: 100%;
+    /* min-height: 100%; */
 
     display: flex;
     flex-direction: column;
@@ -63,14 +63,14 @@ OPEN WIDGET STYLING
 
 }
 .imgbox {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     background: gray;
     flex-grow: .4;
     min-height: 400px;
     position: relative;
 }
 .schedulebox {
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
 
     flex-grow: .3;
     min-height: 500px;
