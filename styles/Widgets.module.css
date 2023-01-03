@@ -34,14 +34,19 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+
   }
   .section1 > div:nth-child(1) > div:nth-child(1){
-    /* border: 2px solid green; */
+    /* border: 3px solid green; */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+
   }
+  
   
   .videowrapper {
     /* border: 2px solid red; */

@@ -2,7 +2,7 @@
 
 export default class PeriodontalSchedule {
 
-    constructor( date){
+    constructor( date ){
         this.schedule = [
             {
                 day: "domingo",

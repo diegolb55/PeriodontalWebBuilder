@@ -22,6 +22,7 @@ export default function Location({noWidget, widgetControl, openWidget}){
                             <p>Manati</p>
                             <div>
                                 <Image src="/images/manati.png"
+                                    alt=""
                                     fill
                                     style={{objectFit:"cover"}}
                                 />
@@ -31,6 +32,7 @@ export default function Location({noWidget, widgetControl, openWidget}){
                             <p>Ponce</p>
                             <div>
                                 <Image src="/images/manati.png"
+                                    alt=""
                                     fill
                                     style={{objectFit:"cover"}}
                                 />                            
@@ -92,6 +94,7 @@ export default function Location({noWidget, widgetControl, openWidget}){
                                 <p>Manati</p>
                                 <div>
                                     <Image src="/images/manati.png"
+                                        alt=""
                                         fill
                                         style={{objectFit:"cover"}}
                                     />
@@ -101,6 +104,7 @@ export default function Location({noWidget, widgetControl, openWidget}){
                                 <p>Ponce</p>
                                 <div>
                                     <Image src="/images/manati.png"
+                                        alt=""
                                         fill
                                         style={{objectFit:"cover"}}
                                     />                            

@@ -81,9 +81,21 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
             >
                 
 
-                <Link href="./" className="link">
-                    <p onClick={ () => enableDocumentScroll() }>Home</p>
-                </Link>
+                
+                {
+                    isHome ? 
+                    <div href="./" className="link">
+                        <p onClick={ () => {
+                            enableDocumentScroll();
+                            closeAllWidgets();
+                            setOpen(false);
+                        } }>Home</p>
+                    </div>
+                    :
+                    <Link href="./" className="link">
+                        <p onClick={ () => enableDocumentScroll() }>Home</p>
+                    </Link>
+                }
                 <Link href="./CitaPage" className="link">
                     <p onClick={ () => enableDocumentScroll() }>Citas</p>
                 </Link>

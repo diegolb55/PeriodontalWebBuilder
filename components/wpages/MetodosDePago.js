@@ -78,21 +78,25 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                     <div className={styles.circles}>
                         <div>
                             <Image src="/images/athmovil.png"
+                                alt=""
                                 fill
                             />
                         </div>
                         <div>
                             <Image src="/images/cash.png"
+                                alt=""
                                 fill
                             />
                         </div>
                         <div>
                             <Image src="/images/cheque.png"
+                                alt=""
                                 fill
                             />
                         </div>
                         <div>
                             <Image src="/images/triples.png"
+                                alt=""
                                 fill
                             />
                         </div>
@@ -113,6 +117,7 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                                 <div>
                                     <div className={styles.opencircle}>
                                         <Image src="/images/athmovil.png"
+                                            alt=""
                                             fill
                                         />
                                     </div>
@@ -121,6 +126,7 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                                 <div>
                                     <div  className={styles.opencircle}>
                                         <Image src="/images/cash.png"
+                                            alt=""
                                             fill
                                         />
                                     </div>
@@ -129,6 +135,7 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                                 <div>
                                     <div  className={styles.opencircle}>
                                         <Image src="/images/cheque.png"
+                                            alt=""
                                             fill
                                         />
                                     </div>
@@ -145,6 +152,7 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                             <div>
                                 <div  className={styles.opencircle}>
                                     <Image src="/images/triples.png"
+                                        alt=""
                                         fill
                                     />
                                 </div>

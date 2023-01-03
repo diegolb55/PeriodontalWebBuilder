@@ -28,6 +28,7 @@ export default function Widgets({ widgetControl, openWidget }){
                 </div>
                 <Tratamientos widgetControl={widgetControl} openWidget={openWidget}/>
             </div>
+               
 
             <div className={styles.videowrapper}>
                 <iframe 
@@ -48,9 +49,9 @@ export default function Widgets({ widgetControl, openWidget }){
                 <Equipo widgetControl={widgetControl} openWidget={openWidget}/>
                 </div>
 
-                <div styke={{}}>
-                <Cita widgetControl={widgetControl} openWidget={openWidget}/>
-                <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/>
+                <div style={{}}>
+                    <Cita widgetControl={widgetControl} openWidget={openWidget}/>
+                    <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/>
                 </div>
 
             </div>
