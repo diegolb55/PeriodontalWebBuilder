@@ -73,27 +73,34 @@ export default function Widget(props){
        
     }
 
-    if (typeof window !== 'undefined'){
-        let portrait = window.matchMedia("(orientation: portrait)");
+    function handleOrientation (e){
+        if(e.matches) {
+            // Portrait mode
+            forceRender(new Date())
+        } else {
+            // Landscape
 
-        useEffect(()=>{
-            portrait.addEventListener("change", function(e) {
-                if(e.matches) {
-                    // Portrait mode
-                   
-                    forceRender(new Date())
-                } else {
-                    // Landscape
-                   
-                    forceRender(new Date())
+            forceRender(new Date())
 
-        
-                }
-            })
-            return portrait.removeEventListener("change", function(e) {})
 
-        })
+        }
     }
+
+    let portrait = 'undefined';
+    useEffect(()=>{
+        if ( typeof window !== 'undefined'){
+            portrait = window.matchMedia("(orientation: portrait)");
+
+            portrait.addEventListener("change", function (e){handleOrientation(e)});
+
+
+        }
+        return () => {
+            portrait.removeEventListener("change",function (e){handleOrientation(e)})
+        }
+    }, [])
+
+
 
 
     return (
