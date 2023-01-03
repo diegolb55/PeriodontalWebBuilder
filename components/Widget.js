@@ -14,6 +14,10 @@ export default function Widget(props){
         height, width,
         children } = props;
 
+    const heighthandler = new HeightHandler();
+    let windowH =  heighthandler.windowHeight;
+    
+    const [, forceRender] = useState(new Date())
     const [wopen, setWOpen] = useState(false);
     const [fixed, setFixed] = useState(false);
     const [zIndex, setZIndex] = useState(false);
@@ -24,22 +28,14 @@ export default function Widget(props){
             setWOpen( isOpen );
         }, 300);
         setTimeout(function(){
-            setFixed(isOpen );
+            setFixed( isOpen );
         }, 800);
         setTimeout(function(){
-            setZIndex(isOpen);
+            setZIndex( isOpen );
         }, 1200);
 
     }, [isOpen]);
 
-
-
-
-    const heighthandler = new HeightHandler();
-    const windowH =  heighthandler.getOuterWindowHeight();
-
-
-   
     
     let cvariants = {
         open:{
@@ -49,7 +45,7 @@ export default function Widget(props){
             scale: fixed ? 1 : 25,
             position: fixed ? "fixed" : "relative",
             zIndex: 11,
-            overflowY: "scroll",
+            // overflowY: "scroll",
             background: background[1],
 
         },
@@ -61,7 +57,7 @@ export default function Widget(props){
             position: fixed ? "fixed" : "relative",
             scale:  fixed ? 25 : 1,
             zIndex : zIndex ? 11 : 10,
-            overflowY: "visible",
+            // overflowY: "hidden",
             background: "transparent",
 
         }
@@ -71,10 +67,40 @@ export default function Widget(props){
        
         if(typeof document !== 'undefined'){
             document.body.style.overflow = "hidden"
+            
 
         }
        
     }
+
+    function handleOrientation (e){
+        if(e.matches) {
+            // Portrait mode
+            forceRender(new Date())
+        } else {
+            // Landscape
+
+            forceRender(new Date())
+
+
+        }
+    }
+
+    let portrait = 'undefined';
+    useEffect(()=>{
+        if ( typeof window !== 'undefined'){
+            portrait = window.matchMedia("(orientation: portrait)");
+
+            portrait.addEventListener("change", function (e){handleOrientation(e)});
+
+
+        }
+        return () => {
+            portrait.removeEventListener("change",function (e){handleOrientation(e)})
+        }
+    }, [])
+
+
 
 
     return (
@@ -88,11 +114,12 @@ export default function Widget(props){
                 }
                 transition={{duration: .5}}
             >
-                <motion.div className={`${styles.widget} ${ styles.absolute}`}
+                <motion.div className={`${styles.widget} ${ styles.absolute }`} // ${ styles.absolute }
                     animate={{
                         background: wopen ? background[1] : background[0],
                         borderRadius: fixed ? 0 : 15,
                         boxShadow: wopen ? "none" : " 2px -2px 15px 2px rgba(114,196,145,0.75)",
+                        overflow: wopen ? "scroll":"hidden"
 
                     }}
                     onClick={ () => {
