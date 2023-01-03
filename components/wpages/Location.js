@@ -61,7 +61,7 @@ export default function Location({noWidget, widgetControl, openWidget}){
             }}            
            
             height={120}
-            width={"30vw"}
+            width={120}
             background={["#ffffff", "#ffffff"]}
         >
 

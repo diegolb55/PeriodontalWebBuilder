@@ -69,7 +69,7 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
             }}  
           
             height={340}
-            width={"30vw"}
+            width={120}
             background={["white", "white"]}
         >
 

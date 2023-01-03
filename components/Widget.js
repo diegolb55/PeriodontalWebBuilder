@@ -19,108 +19,50 @@ export default function Widget(props){
     const [zIndex, setZIndex] = useState(false);
 
     useEffect(() => {
+
         setTimeout(function(){
-            setWOpen(isOpen );
+            setWOpen( isOpen );
         }, 300);
-        // setTimeout(function(){
-        //     setFixed(isOpen );
-        // }, 800);
-        // setTimeout(function(){
-        //     setZIndex(isOpen);
-        // }, 1200);
+        setTimeout(function(){
+            setFixed(isOpen );
+        }, 800);
+        setTimeout(function(){
+            setZIndex(isOpen);
+        }, 1200);
+
     }, [isOpen]);
 
 
-    const widgetRef = useRef()
-    
-
-    const positionControl = useRef({
-        top: 0,
-        left: 0,
-    })
-    
-    function update(){
-        if (widgetRef.current){
-            positionControl.current.top = widgetRef.current?.getBoundingClientRect()?.top;
-            positionControl.current.left = widgetRef.current?.getBoundingClientRect()?.left;
-            console.log("top", positionControl.current.top)
-            console.log("left", positionControl.current.left)
-
-        }
-    }
-    if(typeof document !== 'undefined'){
-        document.addEventListener("scroll", update);
-    }
-    
-    
 
 
     const heighthandler = new HeightHandler();
     const windowH =  heighthandler.getOuterWindowHeight();
 
-    const [closing, setClosing] = useState(false);
-    useEffect(()=>{
-        if(wopen){
-            setClosing(true)
 
-        }
-    }, [wopen])
+   
     
     let cvariants = {
         open:{
             
-            
-            // height: fixed ? heighthandler.getOuterWindowHeight() : height,
-            // width: fixed ? "100vw":width,
-            
-            // scale: fixed ? 1 : 25,
-            // position: fixed ? "fixed" : "relative",
-
-            height: [height, windowH],
-            width: [width, "100vw"],
-
-
-            position: "fixed",
-            top: [positionControl.current.top, 0],
-            left: [positionControl.current.left, 0],
-            
-
-          
-
+            height: fixed ? [null, windowH] : height,
+            width: fixed ? "100vw" : width,
+            scale: fixed ? 1 : 25,
+            position: fixed ? "fixed" : "relative",
             zIndex: 11,
             overflowY: "scroll",
-            // background: background[1]
-            background:"green"
+            background: background[1],
 
-           
         },
         
         closed:{
             
-            // height: fixed ? heighthandler.getOuterWindowHeight() : height,
-            
-            // width:  fixed ? "100vw" : width,
-            // position: fixed ? "fixed" : "relative",
-            // scale:  fixed ? 25 : 1,
-
-            height: height,
-            width: width,
-            position: "relative",
-            top: closing ? [ positionControl.current.top, 0] : 0,
-            left: closing ? [ positionControl.current.left, 0] : 0,
-            
-
-
-
-
-
-            
-
-
+            height: fixed ? windowH : height,
+            width:  fixed ? "100vw" : width,
+            position: fixed ? "fixed" : "relative",
+            scale:  fixed ? 25 : 1,
             zIndex : zIndex ? 11 : 10,
             overflowY: "visible",
-            background: "green",
-
+            background: "transparent",
 
         }
     }
@@ -138,19 +80,13 @@ export default function Widget(props){
     return (
         <div >
             <motion.div  
-                ref={widgetRef} 
                 className={`${styles.widgetCover} `}
                 variants={cvariants}
                 animate={
                     wopen ? "open" : "closed"
                     
                 }
-                transition={{duration: 1, times:[.5, .5, .5, .5], ease:"easeInOut"}}
-                onClick={ () => {
-                    disableDocumentScroll()
-                    // disableScroll();
-                    setIsOpen();
-                } }   
+                transition={{duration: .5}}
             >
                 <motion.div className={`${styles.widget} ${ styles.absolute}`}
                     animate={{
@@ -161,7 +97,6 @@ export default function Widget(props){
                     }}
                     onClick={ () => {
                         disableDocumentScroll()
-                        // disableScroll();
                         setIsOpen();
                     } }   
                 >

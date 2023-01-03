@@ -63,7 +63,7 @@ export default function LandingWrapper() {
          */
         setTimeout(()=>{
         forceRender(Date.now());
-        }, 100)
+        }, 50)
         
     }
 
