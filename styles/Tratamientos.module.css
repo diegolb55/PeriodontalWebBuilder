@@ -111,7 +111,7 @@
     flex-grow: 1;
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
 }
 .imgbox > div {
@@ -126,7 +126,8 @@
 }
 
 .imgbox > div > div {
-    
+    /* border: 2px solid blue; */
+
     height: 150px;
     width: 150px;
     position: relative;
@@ -183,4 +184,11 @@
 .infobox > div > p{
     white-space: nowrap;
     margin: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .imgbox > div > div {
+        height: 100px;
+        width: 100px;
+    }
 }
