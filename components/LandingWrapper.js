@@ -98,8 +98,8 @@ export default function LandingWrapper() {
 
             {/* BACKGROUND BOXES */}
             <div className={styles.sec12}>
-                <div className={styles.b1}></div>
-                <div className={styles.b2}>
+                <div className={styles.b1} ></div>
+                <div className={styles.b2} >
                     <p>bienvenidos</p>
                     <h2>Periodontal &<br/> Oral Health</h2>
                     <p>Dr Gaspar Lugo Morales</p>
@@ -107,24 +107,27 @@ export default function LandingWrapper() {
             </div>
             <div className={styles.sec34}>
 
-                {/*  3D -- Model */}
-                <div style={{
-                        // border: "2px solid red",
-                    
-                        height: "80%",
-                        width: "100%",
-                        maxWidth:700,
-
-                        position:"absolute",
-                        bottom: "20%",
-                        zIndex: 10,
-                    }}>
-                    <Implant />
-                </div>
+                
 
                 <div className={styles.b3}>
+                    {/*  3D -- Model */}
+                    <div style={{
+                            // border: "2px solid red",
+                        
+                            height: "80%",
+                            width: "100%",
+                            maxWidth:700,
+
+                            position:"absolute",
+                            bottom: "20%",
+                            zIndex: 3,
+                            right: 0,
+                        }}>
+                        <Implant />
+                    </div>
                     <p>Contactanos para<br/> citas y preguntas</p>
-                    <button>llamar <BsTelephonePlusFill className={styles.llamarIcon}/></button>
+                    <a href={`tel:${555}`}
+                    >llamar <BsTelephonePlusFill className={styles.llamarIcon}/></a>
                 </div>
                 <div className={styles.b4}>
                     <div className={styles.c1}>
