@@ -124,7 +124,7 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
 
                     breakpoints={{
                         600: {
-                            slidesPerView: 1.2 
+                            slidesPerView: 1.5
                         },
                         800: {
                             slidesPerView: 2
