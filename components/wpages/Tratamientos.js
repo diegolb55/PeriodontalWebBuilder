@@ -75,7 +75,7 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
         treatments?.map(
             (s) => 
                 
-                <SwiperSlide className={styles.myslide}>
+                <SwiperSlide className={styles.myslide} key={Math.random()}>
                          <div className={styles.treatmentbox} >
                              <p>{ s.name }</p>
                              <div className={styles.imgbox}>
