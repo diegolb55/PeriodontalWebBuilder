@@ -42,7 +42,7 @@ OPEN WIDGET STYLING
 **/
 .openContent {
     border: 5px solid red;
-    /* min-height: 100%; */
+    min-height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -58,19 +58,19 @@ OPEN WIDGET STYLING
     position: absolute;
     top: 0;
     background: rgb(217,217,217);
-    background: linear-gradient(0deg, rgba(217,217,217,1) 75%, rgba(217,217,217,0.9) 77%, rgba(217,217,217,0.5) 80%, rgba(217,217,217,0.4) 85%, rgba(217,217,217,0) 100%);
+    background: linear-gradient(0deg, rgba(217,217,217,1) 65%, rgba(217,217,217,0.9) 67%, rgba(217,217,217,0.5) 70%, rgba(217,217,217,0.4) 75%, rgba(217,217,217,0) 100%);
 
 
 }
 .imgbox {
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
     background: gray;
     flex-grow: .4;
     min-height: 400px;
     position: relative;
 }
 .schedulebox {
-    /* border: 2px solid gray; */
+    border: 2px solid gray;
 
     flex-grow: .3;
     min-height: 500px;
@@ -159,9 +159,9 @@ OPEN WIDGET STYLING
         background: linear-gradient(90deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 43%, rgba(217,217,217,1) 54%, rgba(217,217,217,1) 65%, rgba(217,217,217,0.06796221906731448) 85%);
     
     }
-    .schedulebox {
+    /* .schedulebox {
         padding: 150px 0;
-    }
+    } */
     
 }
 
