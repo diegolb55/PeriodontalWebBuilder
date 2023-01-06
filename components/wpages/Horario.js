@@ -10,6 +10,7 @@ import Image from "next/image"
 import { MdLocationOn } from "react-icons/md"
 
 import PeriodontalSchedule from "../../utilities/PeriodontalSchedule";
+import WidgetPro from "../WidgetPro";
 
 export default function Horario({noWidget, widgetControl, openWidget}){
 
@@ -67,14 +68,14 @@ export default function Horario({noWidget, widgetControl, openWidget}){
         )
     }
     return (
-        <Widget
+        <WidgetPro
             isOpen={widgetControl?.current.horario}
             setIsOpen={() => {
                 openWidget("horario")
             }}
             
             height={120}
-            width={120}
+            width={"30vw"}
             background={["#ffffff", "#d9d9d9"]}
         >
 
@@ -144,6 +145,6 @@ export default function Horario({noWidget, widgetControl, openWidget}){
               
             
             
-        </Widget>
+        </WidgetPro>
     )
 }

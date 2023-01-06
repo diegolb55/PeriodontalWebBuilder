@@ -21,8 +21,8 @@ export default function Widgets({ widgetControl, openWidget }){
             {/* section1 */}
             
             <div className={styles.section1}>
-            <div >
-                <div>
+            <div className={styles.griddy}>
+                <div className={styles.subgriddy}>
                 <Horario widgetControl={widgetControl} openWidget={openWidget}/>
                 <Location widgetControl={widgetControl} openWidget={openWidget}/>
                 </div>
