@@ -1,6 +1,7 @@
 import styles from "../../styles/MetodosDePago.module.css"
 import { useState } from "react"
 import Widget from "../Widget"
+import WidgetPro from "../WidgetPro"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
@@ -59,14 +60,14 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
     }
 
     return (
-        <Widget
+        <WidgetPro
             isOpen={widgetControl?.current.metodosDePago}
             setIsOpen={() => {
                 openWidget("metodosDePago")
             }}  
            
             height={150}
-            width={150}
+            width={"30vw"}
             background={["white", "white"]}
         >
 
@@ -174,6 +175,6 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
               
             
             
-        </Widget>
+        </WidgetPro>
     )
 }

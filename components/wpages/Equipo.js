@@ -5,6 +5,7 @@ import Image from "next/image"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
+import WidgetPro from "../WidgetPro"
 
 export default function Equipo({noWidget, widgetControl, openWidget}){
 
@@ -124,14 +125,15 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
     }
 
     return (
-        <Widget
+        <WidgetPro
             isOpen={widgetControl?.current.equipo}
             setIsOpen={() => {
                 openWidget("equipo")
             }}  
           
             height={200}
-            width={250}
+            width={"70vw"}
+            maxwidth={400}
             background={["#72c492", "white"]}
         >
 
@@ -270,6 +272,6 @@ export default function Equipo({noWidget, widgetControl, openWidget}){
               
             
             
-        </Widget>
+        </WidgetPro>
     )
 }

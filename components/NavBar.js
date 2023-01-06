@@ -17,9 +17,6 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
 
     function enableDocumentScroll() {
        
-        // if (typeof window !== 'undefined') {
-        //     window.onscroll = function() {}; 
-        // }
 
         if(typeof document !== 'undefined'){
             document.body.style.overflow = "scroll"
@@ -36,7 +33,6 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                         
                         onClick={ () => {
                             closeAllWidgets();
-                            enableDocumentScroll();
                         }}
                    >
                         <Image
@@ -86,7 +82,6 @@ export default function NavBar({ fill, isHome, closeAllWidgets, widgetControl })
                     isHome ? 
                     <div href="./" className="link">
                         <p onClick={ () => {
-                            enableDocumentScroll();
                             closeAllWidgets();
                             setOpen(false);
                         } }>Home</p>

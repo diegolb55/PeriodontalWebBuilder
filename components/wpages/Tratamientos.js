@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import WidgetPro from "../WidgetPro"
 
 
 
@@ -156,14 +157,14 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
     }
 
     return (
-        <Widget
+        <WidgetPro
             isOpen={widgetControl?.current.services}
             setIsOpen={() => {
                 openWidget("services")
             }}  
           
             height={340}
-            width={120}
+            width={"30vw"}
             background={["white", "white"]}
         >
 
@@ -248,39 +249,6 @@ export default function Tratamientos({noWidget, widgetControl, openWidget}){
               
             
             
-        </Widget>
+        </WidgetPro>
     )
 }
-
- // return (
-        //     <SwiperSlide className={styles.myslide}>
-        //         <div className={styles.treatmentbox} >
-        //             <p>Gummy Smile</p>
-        //             <div className={styles.imgbox}>
-        //                 <div>
-        //                     <p>before</p>
-        //                     <div>
-        //                         <Image
-        //                             src="/images/logo.png"
-        //                             alt=""
-        //                             fill
-        //                         />
-        //                     </div>
-        //                 </div>
-        //                 <div>
-        //                     <p>after</p>
-        //                     <div>
-        //                         <Image
-        //                             src="/images/logo.png"
-        //                             alt=""
-        //                             fill
-        //                         />
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <p>
-        //                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam reprehenderit modi ea tenetur repudiandae nulla, necessitatibus recusandae ipsam. Rem iure dolorum cum magnam perspiciatis! Aperiam adipisci debitis possimus sint?
-        //             </p>
-        //         </div>
-        //     </SwiperSlide>
-        // )

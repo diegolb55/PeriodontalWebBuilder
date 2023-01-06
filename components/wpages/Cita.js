@@ -1,5 +1,6 @@
 import styles from "../../styles/Cita.module.css"
 import Widget from "../Widget"
+import WidgetPro from "../WidgetPro"
 
 import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
@@ -69,14 +70,14 @@ export default function Cita({noWidget, widgetControl, openWidget}){
     }
 
     return (
-        <Widget
+        <WidgetPro
             isOpen={widgetControl?.current.cita}
             setIsOpen={() => {
                 openWidget("cita")
             }}  
            
             height={120}
-            width={120}
+            width={"30vw"}
             background={["white", "white"]}
         >
 
@@ -151,6 +152,6 @@ export default function Cita({noWidget, widgetControl, openWidget}){
               
             
             
-        </Widget>
+        </WidgetPro>
     )
 }

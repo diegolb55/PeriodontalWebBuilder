@@ -6,6 +6,7 @@ import ClosedContent from "./components/ClosedContent"
 import OpenContent from "./components/OpenContent"
 import {MdLocationOn} from "react-icons/md"
 import Image from "next/image"
+import WidgetPro from "../WidgetPro"
 
 export default function Location({noWidget, widgetControl, openWidget}){
 
@@ -54,14 +55,14 @@ export default function Location({noWidget, widgetControl, openWidget}){
     }
 
     return (
-        <Widget
+        <WidgetPro
             isOpen={widgetControl?.current.location}
             setIsOpen={() => {
                 openWidget("location")
             }}            
            
             height={120}
-            width={120}
+            width={"30vw"}
             background={["#ffffff", "#ffffff"]}
         >
 
@@ -125,6 +126,6 @@ export default function Location({noWidget, widgetControl, openWidget}){
               
             
             
-        </Widget>
+        </WidgetPro>
     )
 }

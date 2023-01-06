@@ -6,62 +6,86 @@ import { useElementPosition, getAbsoluteOffsetLeft, getAbsoluteOffsetTop } from 
 import { BsBoundingBoxCircles } from "react-icons/bs";
 
 
-export default function Widget(props){
+export default function WidgetPro(props){
     
     const {
         isOpen, setIsOpen, 
         background,
-        height, width,
+        height, width, maxwidth,
         children } = props;
 
     const heighthandler = new HeightHandler();
     let windowH =  heighthandler.windowHeight;
     
     const [, forceRender] = useState(new Date())
-    const [wopen, setWOpen] = useState(false);
-    const [fixed, setFixed] = useState(false);
-    const [zIndex, setZIndex] = useState(false);
+   
 
+
+    const currentPos = useRef({
+        top:0,
+        left:0,
+    })
+    const widget = useRef();
+    const [wopen, setWOpen] = useState(false);
+    
 
     useEffect(() => {
 
-        setTimeout(function(){
-            setWOpen( isOpen );
-        }, 300);
-        setTimeout(function(){
-            setFixed( isOpen );
-        }, 800);
-        setTimeout(function(){
-            setZIndex( isOpen );
-        }, 1200);
+
+        if(typeof widget.current != 'undefined'){
+            if(isOpen){
+                
+                currentPos.current.top = widget.current.getBoundingClientRect().top;
+                currentPos.current.left = widget.current.getBoundingClientRect().left;
+                setWOpen(true);
+                disableDocumentScroll();
+
+                
+    
+            }
+            else {
+                setTimeout(()=>{
+                    setWOpen(false);
+                    enableDocumentScroll();
+                }, 1000)
+
+            }
+        }
+           
 
     }, [isOpen]);
 
-   
     
     let cvariants = {
         open:{
             
-            height: fixed ? [null, windowH] : height,
-            width: fixed ? "100vw" : width,
-            scale: fixed ? 1 : 25,
-            position: fixed ? "fixed" : "relative",
             zIndex: 11,
-            background: background[1],
 
+            // new
+            background: background[1],
+            height: windowH,
+            width: "100vw",
+            maxWidth: "none",
+
+            position: "fixed",
+            top: [currentPos.current.top, 0],
+            left: [currentPos.current.left, 0],
 
         },
         
         closed:{
             
-            height: fixed ? windowH : height,
-            width:  fixed ? "100vw" : width,
-            position: fixed ? "fixed" : "relative",
-            scale:  fixed ? 25 : 1,
-            zIndex : zIndex ? 11 : 10,
-            background: "transparent",
-
            
+            zIndex : wopen ? 11 : 10,
+
+            // new
+            background: "transparent",
+            height: height,
+            width: width,
+            maxWidth: wopen ? "none" : ( maxwidth ? maxwidth: 250 ),
+            position: wopen ? "fixed" : "relative",
+            top: wopen ? [0, currentPos.current.top] : [0, 0],
+            left: wopen ? [0, currentPos.current.left] : [0, 0],
 
         }
     }
@@ -75,6 +99,15 @@ export default function Widget(props){
         }
        
     }
+    function enableDocumentScroll() {
+       
+     
+
+        if(typeof document !== 'undefined'){
+            document.body.style.overflow = "scroll"
+
+        }
+    }
 
     function handleOrientation (e){
         if(e.matches) {
@@ -84,8 +117,6 @@ export default function Widget(props){
             // Landscape
 
             forceRender(new Date())
-
-
         }
     }
 
@@ -112,21 +143,21 @@ export default function Widget(props){
                 className={`${styles.widgetCover} `}
                 variants={cvariants}
                 animate={
-                    wopen ? "open" : "closed"
+                    isOpen ? "open" : "closed"
                     
                 }
                 transition={{duration: .5}}
                 onClick={ () => {
-                    disableDocumentScroll()
                     setIsOpen();
                 } } 
+                ref={widget}  
             >
                 <motion.div className={`${styles.widget} ${ styles.absolute }`} // ${ styles.absolute }
                     animate={{
-                        background: wopen ? background[1] : background[0],
-                        borderRadius: fixed ? 0 : 15,
-                        boxShadow: wopen ? "none" : " 2px -2px 15px 2px rgba(114,196,145,0.75)",
-                        overflow: wopen ? "scroll":"hidden"
+                        background: isOpen ? background[1] : background[0],
+                        borderRadius: isOpen ? 0 : 15,
+                        boxShadow: isOpen ? "none" : "2px -2px 15px 2px rgba(114,196,145,0.75)",
+                        overflow: isOpen ? "scroll" : "hidden"
 
                     }}
                     onClick={ () => {
