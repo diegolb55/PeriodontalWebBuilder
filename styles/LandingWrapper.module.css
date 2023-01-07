@@ -78,6 +78,8 @@
 
 .sec34 {
     /* border: 5px dotted blue; */
+    /* color: rgba(133,164,220,0.8);
+    color: rgba(207, 220, 133, 0.8); */
     align-self: flex-end;
 
     position: relative;
@@ -127,7 +129,7 @@
     align-items: center;
 
     position: relative;
-    z-index: 4;
+    z-index: 5;
 
     
 }
@@ -143,7 +145,7 @@
     width: 100%;
     position: absolute; 
     bottom: 0;
-    /* z-index: -1; */
+    /* z-index: 2; */
 }
 .c1 {
     background: white;
@@ -170,11 +172,17 @@
 
     /* border: 2px solid blue; */
     width: 30%;
-    height: 110%;
+    height: 120%;
     position: absolute;
    
     right: 0;
-    top: -20%;
+    bottom: 0;
+    /* z-index: -1; */
+}
+.b4r > div {
+    position: absolute;
+    height: 15%;
+    width: 100%;
 }
 .b4rc {
     /* border: 2px solid red; */
@@ -219,6 +227,10 @@
 .explore > p {
     font-size: .8rem;
     margin: 0 10px;
+    color: inherit;
+}
+.arrdown {
+    color: inherit;
 }
 .sec5678 {
     /* border: 5px dotted red; */
