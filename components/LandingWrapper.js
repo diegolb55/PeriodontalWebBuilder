@@ -4,7 +4,8 @@ import NavBar from "./NavBar";
 import { useState, useRef } from "react";
 import Implant from "../components/Implant";
 import { RxDoubleArrowDown } from "react-icons/rx"
-import {BsTelephonePlusFill} from "react-icons/bs"
+import {BsTelephonePlusFill, BsGithub} from "react-icons/bs"
+import Link from "next/link";
 
 import { motion } from "framer-motion"
 
@@ -167,7 +168,12 @@ export default function LandingWrapper() {
             <div className={styles.sec91011}>
                 <div className={styles.b9}></div>
                 <div className={styles.b10}></div>
-                <div className={styles.b11}></div>
+                <div className={styles.b11}>
+                    <a href="https://github.com/diegolb55" >
+                        <BsGithub className={styles.ghub}/>
+
+                    </a>
+                </div>
 
             </div>
 
