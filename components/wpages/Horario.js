@@ -14,7 +14,7 @@ import WidgetPro from "../WidgetPro";
 
 export default function Horario({noWidget, widgetControl, openWidget}){
 
-
+ 
     let date = new Date();
     const schedule = new PeriodontalSchedule( date );
 
