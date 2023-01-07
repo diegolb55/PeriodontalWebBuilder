@@ -134,7 +134,7 @@ export default function LandingWrapper() {
                             maxWidth:700,
 
                             position:"absolute",
-                            bottom: "20%",
+                            bottom: 0,
                             zIndex: 4,
                             right: 0,
                         }}>
