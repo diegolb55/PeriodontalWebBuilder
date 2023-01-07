@@ -12,28 +12,16 @@ export function Model(props) {
 
     const { nodes, materials } = useGLTF("/assets/scene.gltf");
 
-    const group = useRef()
-    const tooth = useRef()
+    const group = useRef();
 
     const [active, setActive] = useState(false);
 
-    const bounds = useRef({
-        rotation:{
-            x: 0,
-            y: 0,
-            z: 0,
-        },
-        position:{
-            x: 0,
-            y: 0,
-            z: 0,
-        }
-    })
+
     
     const springs = useSpring({
         scale: active ? [1.3, 1.3, 1.3] : [.9, .9, .9],
         rotation: active ? [0, 0, 0] : [.5, 0, .3],
-        position: active ? [0, 0, -10] : [5, 0, 0],
+        position: active ? [0, 0, -10] : [0, 0, 0],
 
 
         config: config.wobbly,
@@ -41,10 +29,10 @@ export function Model(props) {
 
     useFrame(({clock}) => {
 
-        const x = Math.sin(clock.getElapsedTime() / 1) * 4
-        const y = Math.sin(clock.getElapsedTime() / 2) * 4
+        const x = Math.sin(clock.getElapsedTime() / 1) * 4;
+        const y = Math.sin(clock.getElapsedTime() / 2) * 4;
 
-        const c = Math.sin(clock.getElapsedTime() / .3) * 4
+        const c = Math.sin(clock.getElapsedTime() / .3) * 4;
 
 
 
@@ -58,6 +46,8 @@ export function Model(props) {
             group.current.position.x = x
             group.current.position.y = y
 
+          
+
 
 
         }
@@ -67,15 +57,11 @@ export function Model(props) {
     const handleClick = () => {
         if(!active){
             setActive(true);
-            bounds.current.position.x = group.current.position.x;
-            bounds.current.position.y = group.current.position.y;
-            bounds.current.position.z = group.current.position.z
-
         }
 
         setTimeout(()=>{
             setActive(false);
-        }, 1000)
+        }, 1500)
 
     }
 
@@ -109,27 +95,25 @@ export function Model(props) {
 
             
         >   
-            <Html position={ [0, 4, 0]}
->
+            <Html position={[0, -4, 0]}>
                 <motion.button
                     onClick={() => handleClick()} 
                     animate={"twinkle"}
                     variants={variants}
                     style={{
-                        border: "1px solid red",
+                        border: "2px solid white",
                         borderRadius:10,
                         color: "red",
                         padding:5,
                         fontSize:".6rem",
-                        background: "#ffffff9c",
+                        background: "#ffffffb1",
                         whiteSpace:"nowrap",
-                        backdropFilter: "blur(2px)",
+                        backdropFilter: "blur(8px)",
 
                     }}>click me</motion.button>
             </Html>
             
             <animated.mesh
-                ref={tooth}
 
                 scale={[.05, .05, .05]}
                 position={ [0, 6, 0] }

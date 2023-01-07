@@ -54,7 +54,7 @@ export default function Implant(){
         
             <Canvas >
                 {/* <CameraControls/> */}
-                <PerspectiveCamera makeDefault fov={75} position={[-12, 0, 30]} />
+                <PerspectiveCamera makeDefault fov={75} position={[-6, 0, 30]} />
                 <ImplantModel />
                 
                 <Lighting/>
