@@ -41,7 +41,7 @@
 OPEN WIDGET STYLING
 **/
 .openContent {
-    border: 5px solid red;
+    /* border: 5px solid red; */
     min-height: 100%;
 
     display: flex;
@@ -51,7 +51,7 @@ OPEN WIDGET STYLING
 }
 .boxgradient {
     /* border: 2px solid gold; */
-    display: none;
+    /* display: none; */
     background: gray;
     height: 100%;
     width: 100%;
@@ -63,16 +63,16 @@ OPEN WIDGET STYLING
 
 }
 .imgbox {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     background: gray;
     flex-grow: .4;
     min-height: 400px;
     position: relative;
 }
 .schedulebox {
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
 
-    flex-grow: .3;
+    flex-grow: .6;
     min-height: 500px;
     /* padding: 20px 0 2; */
    
@@ -124,7 +124,7 @@ OPEN WIDGET STYLING
     width: 30%;
     position: absolute;
     right: 10%;
-    top: -30px;
+    top: -40px;
     padding: 20px 10px;
     text-align: center;
     background: #D1D1D1;
@@ -159,9 +159,12 @@ OPEN WIDGET STYLING
         background: linear-gradient(90deg, rgba(217,217,217,1) 33%, rgba(217,217,217,1) 43%, rgba(217,217,217,1) 54%, rgba(217,217,217,1) 65%, rgba(217,217,217,0.06796221906731448) 85%);
     
     }
-    /* .schedulebox {
-        padding: 150px 0;
-    } */
+    .imgbox {
+        flex-grow: .5;
+    }
+    .schedulebox {
+        flex-grow: .5;
+    }
     
 }
 

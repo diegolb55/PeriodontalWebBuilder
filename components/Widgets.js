@@ -21,37 +21,47 @@ export default function Widgets({ widgetControl, openWidget }){
             {/* section1 */}
             
             <div className={styles.section1}>
-            <div className={styles.griddy}>
-                <div className={styles.subgriddy}>
-                <Horario widgetControl={widgetControl} openWidget={openWidget}/>
-                <Location widgetControl={widgetControl} openWidget={openWidget}/>
-                </div>
-                <Tratamientos widgetControl={widgetControl} openWidget={openWidget}/>
+                    <div className={styles.griddy}>
+                        <div className={styles.subgriddy}>
+                            <div>
+                                <Horario widgetControl={widgetControl} openWidget={openWidget}/>
+                            </div>
+                            <div>
+                                <Location widgetControl={widgetControl} openWidget={openWidget}/>
+                            </div>
+                        </div>
+                        <div>
+                            <Tratamientos widgetControl={widgetControl} openWidget={openWidget}/>
+                        </div>
+                    </div>
+                    <div className={styles.videowrapper}>
+                        <iframe 
+                            src="https://www.youtube.com/embed/-hVy_jxeMeA" 
+                            title="YouTube video player" 
+                            style={{border:"none"}}
+                            allowFullScreen>
+                        </iframe>
+                    </div>
             </div>
                
 
-            <div className={styles.videowrapper}>
-                <iframe 
-                
-                src="https://www.youtube.com/embed/-hVy_jxeMeA" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allowFullScreen></iframe>
-
-            </div>
-            </div>
+           
 
 
             {/* Section 2 */}
             <div className={styles.section2}>
 
                 <div style={{}}>
-                <Equipo widgetControl={widgetControl} openWidget={openWidget}/>
+                    <Equipo widgetControl={widgetControl} openWidget={openWidget}/>
                 </div>
 
-                <div style={{}}>
-                    <Cita widgetControl={widgetControl} openWidget={openWidget}/>
-                    <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/>
+                <div className={styles.subgriddyx}>
+                    <div>
+                        <Cita widgetControl={widgetControl} openWidget={openWidget}/>
+                    </div>
+                    <div>
+                        <MetodosDePago widgetControl={widgetControl} openWidget={openWidget}/>
+                    </div>
                 </div>
 
             </div>
