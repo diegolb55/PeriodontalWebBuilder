@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, Html } from "@react-three/drei";
 import { act, useFrame, extend, useThree } from "@react-three/fiber";
 
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import { useSpring, animated, config } from '@react-spring/three'
+import {motion} from "framer-motion"
 
 export function Model(props) {
 
@@ -15,6 +16,19 @@ export function Model(props) {
     const tooth = useRef()
 
     const [active, setActive] = useState(false);
+
+    const bounds = useRef({
+        rotation:{
+            x: 0,
+            y: 0,
+            z: 0,
+        },
+        position:{
+            x: 0,
+            y: 0,
+            z: 0,
+        }
+    })
     
     const springs = useSpring({
         scale: active ? [1.3, 1.3, 1.3] : [.9, .9, .9],
@@ -53,6 +67,10 @@ export function Model(props) {
     const handleClick = () => {
         if(!active){
             setActive(true);
+            bounds.current.position.x = group.current.position.x;
+            bounds.current.position.y = group.current.position.y;
+            bounds.current.position.z = group.current.position.z
+
         }
 
         setTimeout(()=>{
@@ -61,10 +79,24 @@ export function Model(props) {
 
     }
 
+      // variants
+      const variants = {
+        twinkle: {
+            display: active ? "none":"block",
+            opacity: [0, 1],
+            transition: {
+                yoyo: Infinity,
+                duration: 2.5,
+            } 
+        }
+    }
+
+ 
+
     return (
         <>
         <animated.pointLight  position={[0, 30, 0]} color={springs.color} intensity={1}/>
-
+        
         <animated.group 
             ref={group} 
             {...props} dispose={null} 
@@ -76,7 +108,25 @@ export function Model(props) {
             rotation={springs.rotation}
 
             
-        >
+        >   
+            <Html position={ [0, 4, 0]}
+>
+                <motion.button
+                    onClick={() => handleClick()} 
+                    animate={"twinkle"}
+                    variants={variants}
+                    style={{
+                        border: "1px solid red",
+                        borderRadius:10,
+                        color: "red",
+                        padding:5,
+                        fontSize:".6rem",
+                        background: "#ffffff9c",
+                        whiteSpace:"nowrap",
+                        backdropFilter: "blur(2px)",
+
+                    }}>click me</motion.button>
+            </Html>
             
             <animated.mesh
                 ref={tooth}

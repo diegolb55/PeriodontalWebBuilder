@@ -47,7 +47,7 @@ export default function WidgetPro(props){
                 setTimeout(()=>{
                     setWOpen(false);
                     enableDocumentScroll();
-                }, 1000)
+                }, 600)
 
             }
         }
@@ -147,9 +147,7 @@ export default function WidgetPro(props){
                     
                 }
                 transition={{duration: .5}}
-                onClick={ () => {
-                    setIsOpen();
-                } } 
+                
                 ref={widget}  
             >
                 <motion.div className={`${styles.widget} ${ styles.absolute }`} // ${ styles.absolute }

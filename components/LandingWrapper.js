@@ -83,6 +83,20 @@ export default function LandingWrapper() {
                 yoyo: Infinity,
                 duration: 5
             } 
+        },
+        bulb: {
+            boxShadow: ["2px -10px 15px -5px rgba(133,164,220,0.5)", "2px -10px 15px -5px rgba(207, 220, 133, 0.5)"],
+            transition: {
+                yoyo: Infinity,
+                duration: 5
+            } 
+        },
+        color:{
+            color: ["rgba(133,164,220,1)", "rgba(207, 220, 133, 1)"],
+            transition: {
+                yoyo: Infinity,
+                duration: 5
+            } 
         }
     }
 
@@ -113,15 +127,15 @@ export default function LandingWrapper() {
                 <div className={styles.b3}>
                     {/*  3D -- Model */}
                     <div style={{
+
                             // border: "2px solid red",
-                        
                             height: "80%",
                             width: "100%",
                             maxWidth:700,
 
                             position:"absolute",
                             bottom: "20%",
-                            zIndex: 3,
+                            zIndex: 4,
                             right: 0,
                         }}>
                         <Implant />
@@ -130,33 +144,43 @@ export default function LandingWrapper() {
                     <a href={`tel:${555}`}
                     >llamar <BsTelephonePlusFill className={styles.llamarIcon}/></a>
                 </div>
-                <div className={styles.b4}>
-                    <div className={styles.c1}>
+                <motion.div 
+                    className={styles.b4}
+                    animate={"light1"}
+                    variants={lightvariants}>
+                    {/* <div className={styles.c1}>
                         <motion.div 
                             className={styles.lightbox1}
                             animate={"light1"}
                             variants={lightvariants}
                             
                         ></motion.div>
-                    </div>
+                    </div> */}
                     <div className={styles.b4r}>
-                        <motion.div className={styles.b4rc}
-                            animate={"light1"}
+                        <motion.div
+                            animate={"bulb"}
                             variants={lightvariants}
                         ></motion.div>
-                        <div className={styles.b4rc1}>
+                        {/* <motion.div className={styles.b4rc}
+                            animate={"light1"}
+                            variants={lightvariants}
+                        ></motion.div> */}
+                        {/* <div className={styles.b4rc1}>
                             <motion.div className={styles.b4rc1a}
                                 animate={"light1"}
                                 variants={lightvariants}
                             ></motion.div>
-                        </div>
+                        </div> */}
                     </div>
-                    <div className={styles.explore}>
-                        <RxDoubleArrowDown/>
-                        <p>explore all widgets</p>
-                        <RxDoubleArrowDown/>
-                    </div>
-                </div>
+                    <motion.div className={styles.explore}
+                        animate={"color"}
+                        variants={lightvariants}
+                    >
+                        <RxDoubleArrowDown className={styles.arrdown}/>
+                            <p>explore all widgets</p>
+                        <RxDoubleArrowDown className={styles.arrdown}/>
+                    </motion.div>
+                </motion.div>
             </div>
             <div className={styles.sec5678}>
                 <div className={styles.b5}></div>

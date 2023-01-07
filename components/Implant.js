@@ -10,6 +10,8 @@ import { Model } from "../public/assets/Model";
 
 
 
+
+
 const ImplantModel = () => {
 
    
@@ -52,8 +54,9 @@ export default function Implant(){
         
             <Canvas >
                 {/* <CameraControls/> */}
-                <PerspectiveCamera makeDefault fov={75} position={[-15, 0, 25]} />
+                <PerspectiveCamera makeDefault fov={75} position={[-12, 0, 30]} />
                 <ImplantModel />
+                
                 <Lighting/>
             </Canvas>
         
