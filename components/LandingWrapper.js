@@ -127,7 +127,6 @@ export default function LandingWrapper() {
                 <div className={styles.b3}>
                     {/*  3D -- Model */}
                     <div style={{
-
                             // border: "2px solid red",
                             height: "80%",
                             width: "100%",

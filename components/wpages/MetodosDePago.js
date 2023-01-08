@@ -12,7 +12,7 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
 
     if(noWidget){ 
         return (
-            <div className={styles.openContent} style={{height:"130vh"}}>
+            <div className={styles.openContent} style={{minHeight:"130vh"}}>
                 <div>
                     <div className={styles.pagos}>
                         <div>
@@ -21,27 +21,47 @@ export default function MetodosDePago({noWidget, widgetControl, openWidget}){
                         <div></div>
                         <div>
                             <div>
-                                <div></div>
-                                <p>ath business</p>
+                                <div className={styles.opencircle}>
+                                    <Image src="/images/athmovil.png"
+                                        alt=""
+                                        fill
+                                    />
+                                </div>
+                                <p>ath movil</p>
                             </div>
                             <div>
-                                <div></div>
+                                <div  className={styles.opencircle}>
+                                    <Image src="/images/cash.png"
+                                        alt=""
+                                        fill
+                                    />
+                                </div>
                                 <p>efectivo</p>
                             </div>
                             <div>
-                                <div></div>
+                                <div  className={styles.opencircle}>
+                                    <Image src="/images/cheque.png"
+                                        alt=""
+                                        fill
+                                    />
+                                </div>
                                 <p>cheque</p>
                             </div>
                         </div>
                     </div>
                     
                     <div className={styles.planes}>
-                        <div>
+                        <div  >
                             <h4>Plan Medico</h4>
                         </div>
                         <div></div>
                         <div>
-                            <div></div>
+                            <div  className={styles.opencircle}>
+                                <Image src="/images/triples.png"
+                                    alt=""
+                                    fill
+                                />
+                            </div>
                             <p>triple S</p>
                         </div>
                     </div>
